@@ -1,0 +1,102 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — FAQ Optionen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#0d0d0b;color:#F4EEDF;font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.head{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) 1.25rem 1rem}
+.kick{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#E0A53C}
+.head h1{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.7rem,1rem+4vw,3rem);margin:.5rem 0 .5rem}
+.head p{color:#B6AD95;max-width:64ch;font-weight:300;line-height:1.65}
+.meta{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3rem) 1.25rem .9rem;display:grid;gap:.5rem;border-top:1px solid rgba(244,238,223,.12)}
+.num{font-family:'Space Mono',monospace;color:#E0A53C;font-size:.78rem;letter-spacing:.2em}
+.name{font-family:'Alfa Slab One',serif;font-size:clamp(1.3rem,1rem+2.2vw,2rem)}
+.desc{color:#B6AD95;font-weight:300;max-width:72ch;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+.tag{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(244,238,223,.2);padding:.35rem .6rem;border-radius:999px;color:#B6AD95}
+.stage{position:relative;margin:0 1.25rem;border:1px solid rgba(244,238,223,.14);border-radius:14px;overflow:hidden;padding:clamp(1.6rem,4vw,3rem)}
+.gtitle{text-align:center;margin-bottom:1.6rem}
+.gtitle h3{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.5rem,1rem+2.4vw,2.2rem);margin:.3rem 0}
+details{overflow:hidden}summary{list-style:none;cursor:pointer}summary::-webkit-details-marker{display:none}
+.q{font-family:'Libre Franklin';font-weight:600;color:#F4EEDF}
+.pl{color:#E0A53C;transition:.3s}details[open] .pl{transform:rotate(45deg)}
+.bd{color:#B6AD95;font-weight:300;line-height:1.7}
+
+/* F1 classic single */
+.f1{max-width:720px;margin:0 auto}
+.f1 details{border-bottom:1px solid rgba(244,238,223,.14)}
+.f1 summary{display:flex;gap:1rem;align-items:center;padding:1.1rem 0;font-size:1.08rem}
+.f1 summary .pl{margin-left:auto;font-size:1.3rem}
+.f1 .bd{padding:0 2rem 1.2rem 0}
+
+/* F2 two columns */
+.f2{columns:2 300px;column-gap:1.4rem}
+.f2 details{break-inside:avoid;margin-bottom:.8rem;border:1px solid rgba(244,238,223,.14);border-radius:10px;background:#121210}
+.f2 summary{display:flex;gap:.8rem;align-items:center;padding:1rem;font-size:1rem}
+.f2 summary .pl{margin-left:auto}
+.f2 .bd{padding:0 1rem 1rem}
+
+/* F3 split sticky */
+.f3{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.5rem,4vw,3rem)}
+.f3 .lead h3{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.6rem,1rem+2.6vw,2.4rem);color:#F4EEDF;margin:.4rem 0}
+.f3 .lead p{color:#B6AD95;font-weight:300;line-height:1.7}
+.f3 .lead .btn{display:inline-block;margin-top:1rem;border:1px solid #E0A53C;color:#E0A53C;padding:.6rem 1.3rem;border-radius:2px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
+.f3 details{border-bottom:1px solid rgba(244,238,223,.14)}
+.f3 summary{display:flex;gap:.8rem;padding:.9rem 0;font-size:1rem}
+.f3 summary .pl{margin-left:auto}
+.f3 .bd{padding:0 1rem 1rem 0}
+@media(max-width:760px){.f3{grid-template-columns:1fr}}
+
+/* F4 minimal lines numbered */
+.f4{max-width:760px;margin:0 auto;counter-reset:q}
+.f4 details{border-top:1px solid rgba(244,238,223,.12)}
+.f4 details:last-child{border-bottom:1px solid rgba(244,238,223,.12)}
+.f4 summary{display:flex;gap:1rem;align-items:baseline;padding:1.1rem 0}
+.f4 summary::before{counter-increment:q;content:counter(q,decimal-leading-zero);font-family:'Space Mono';color:#E0A53C;font-size:.8rem}
+.f4 summary .q{font-size:1.1rem}
+.f4 summary .pl{margin-left:auto;font-size:1.3rem}
+.f4 .bd{padding:0 2rem 1.2rem 2.6rem}
+
+/* F5 card grid */
+.f5 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:1rem}
+.f5 details{border:1px solid rgba(244,238,223,.14);border-radius:12px;background:#121210;padding:.3rem;transition:.3s}
+.f5 details[open]{border-color:#E0A53C}
+.f5 summary{display:flex;gap:.7rem;align-items:flex-start;padding:1rem;font-size:1rem}
+.f5 summary .pl{margin-left:auto}
+.f5 .bd{padding:0 1rem 1rem;font-size:.9rem}
+.foot{max-width:1100px;margin:0 auto;padding:2.5rem 1.25rem 4rem;color:#B6AD95;font-weight:300;border-top:1px solid rgba(244,238,223,.12)}
+.foot b{color:#F4EEDF;font-weight:600}
+</style></head><body>
+<header class="head"><span class="kick">Dog Days Tattoo · Münster · Design-Phase 06 · FAQ</span>
+<h1>„Häufige Fragen" — 5 Optionen</h1><p>Nimmt Ängste (Schmerz, Preis, Hygiene, ab 18, Termine) und stärkt SEO/GEO über FAQ-Schema. Antworten sind „answer-first" (40–80 Wörter, ideal für KI-Zitate). 5 Layouts.</p></header>
+
+<section><div class="meta"><span class="num">FAQ 01</span><h2 class="name">„Classic" — Einspaltig</h2>
+<p class="desc">Klassische, zentrierte Akkordeon-Liste mit feinen Trennlinien. Maximale Lesbarkeit, ruhig, premium. Der Standard, den Besucher erwarten.</p>
+<div class="tags"><span class="tag">Einspaltig</span><span class="tag">Trennlinien</span><span class="tag">Lesbar</span></div></div>
+<div class="stage"><div class="gtitle"><span class="kick">Gut zu wissen</span><h3>Häufige Fragen</h3></div><div class="f1"><details open><summary><span class="q">Tut Tätowieren weh?</span><span class="pl">+</span></summary><div class="bd">Ehrlich: Es ist unangenehm, aber gut auszuhalten. Wie stark, hängt von der Körperstelle und dir ab. In unserem ruhigen Atelier nehmen wir uns Zeit und machen Pausen, wann immer du sie brauchst.</div></details><details ><summary><span class="q">Was kostet ein Tattoo bei Dog Days?</span><span class="pl">+</span></summary><div class="bd">Der Preis hängt von Größe, Motiv und Aufwand ab. Kleine Arbeiten starten im unteren zweistelligen Bereich, größere berechnen wir fair pro Sitzung. Den genauen Preis nennen wir transparent nach der Beratung — ohne Überraschungen.</div></details><details ><summary><span class="q">Muss ich volljährig sein?</span><span class="pl">+</span></summary><div class="bd">Ja. Wir tätowieren ausschließlich Personen ab 18 Jahren — mit gültigem Ausweis. Keine Ausnahmen.</div></details><details ><summary><span class="q">Wie bekomme ich einen Termin?</span><span class="pl">+</span></summary><div class="bd">Dog Days ist ein privates Atelier — wir arbeiten ausschließlich nach Vereinbarung. Stell einfach eine Anfrage über das Formular, dann melden wir uns persönlich und finden gemeinsam einen Termin.</div></details><details ><summary><span class="q">Kann ich mein eigenes Design mitbringen?</span><span class="pl">+</span></summary><div class="bd">Unbedingt. Bring deine Ideen und Referenzen mit — wir verfeinern sie gemeinsam zu einem individuellen Design, das wirklich zu dir gehört.</div></details><details ><summary><span class="q">Wie hygienisch wird gearbeitet?</span><span class="pl">+</span></summary><div class="bd">Sehr sorgfältig: sterile Einweg-Materialien, EU-konforme Farben und Hygiene nach den gesetzlichen Vorgaben. Deine Gesundheit ist die Grundlage unserer Arbeit.</div></details></div></div></section>
+
+<section><div class="meta"><span class="num">FAQ 02</span><h2 class="name">„Two Columns" — Karten</h2>
+<p class="desc">Zwei Spalten mit Karten-Akkordeons — kompakter, viele Fragen ohne langes Scrollen. Karten bekommen Gold-Rand beim Öffnen. Gut bei vielen Fragen.</p>
+<div class="tags"><span class="tag">2 Spalten</span><span class="tag">Karten</span><span class="tag">Kompakt</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Häufige Fragen</h3></div><div class="f2"><details open><summary><span class="q">Tut Tätowieren weh?</span><span class="pl">+</span></summary><div class="bd">Ehrlich: Es ist unangenehm, aber gut auszuhalten. Wie stark, hängt von der Körperstelle und dir ab. In unserem ruhigen Atelier nehmen wir uns Zeit und machen Pausen, wann immer du sie brauchst.</div></details><details ><summary><span class="q">Was kostet ein Tattoo bei Dog Days?</span><span class="pl">+</span></summary><div class="bd">Der Preis hängt von Größe, Motiv und Aufwand ab. Kleine Arbeiten starten im unteren zweistelligen Bereich, größere berechnen wir fair pro Sitzung. Den genauen Preis nennen wir transparent nach der Beratung — ohne Überraschungen.</div></details><details ><summary><span class="q">Muss ich volljährig sein?</span><span class="pl">+</span></summary><div class="bd">Ja. Wir tätowieren ausschließlich Personen ab 18 Jahren — mit gültigem Ausweis. Keine Ausnahmen.</div></details><details ><summary><span class="q">Wie bekomme ich einen Termin?</span><span class="pl">+</span></summary><div class="bd">Dog Days ist ein privates Atelier — wir arbeiten ausschließlich nach Vereinbarung. Stell einfach eine Anfrage über das Formular, dann melden wir uns persönlich und finden gemeinsam einen Termin.</div></details><details ><summary><span class="q">Kann ich mein eigenes Design mitbringen?</span><span class="pl">+</span></summary><div class="bd">Unbedingt. Bring deine Ideen und Referenzen mit — wir verfeinern sie gemeinsam zu einem individuellen Design, das wirklich zu dir gehört.</div></details><details ><summary><span class="q">Wie hygienisch wird gearbeitet?</span><span class="pl">+</span></summary><div class="bd">Sehr sorgfältig: sterile Einweg-Materialien, EU-konforme Farben und Hygiene nach den gesetzlichen Vorgaben. Deine Gesundheit ist die Grundlage unserer Arbeit.</div></details></div></div></section>
+
+<section><div class="meta"><span class="num">FAQ 03</span><h2 class="name">„Split" — Sticky-Headline</h2>
+<p class="desc">Links eine Überschrift + CTA (bleibt im echten Build beim Scrollen stehen), rechts die Fragen. Wirkt redaktionell &amp; führt nebenbei zur Kontaktaufnahme.</p>
+<div class="tags"><span class="tag">Sticky-Lead</span><span class="tag">2-Spalten</span><span class="tag">CTA integriert</span></div></div>
+<div class="stage"><div class="f3"><div class="lead"><span class="kick">Gut zu wissen</span><h3>Häufige<br>Fragen</h3><p>Noch eine Frage offen? Schreib uns einfach — wir antworten persönlich.</p><a class="btn" href="#">Frage stellen</a></div>
+<div><details open><summary><span class="q">Tut Tätowieren weh?</span><span class="pl">+</span></summary><div class="bd">Ehrlich: Es ist unangenehm, aber gut auszuhalten. Wie stark, hängt von der Körperstelle und dir ab. In unserem ruhigen Atelier nehmen wir uns Zeit und machen Pausen, wann immer du sie brauchst.</div></details><details ><summary><span class="q">Was kostet ein Tattoo bei Dog Days?</span><span class="pl">+</span></summary><div class="bd">Der Preis hängt von Größe, Motiv und Aufwand ab. Kleine Arbeiten starten im unteren zweistelligen Bereich, größere berechnen wir fair pro Sitzung. Den genauen Preis nennen wir transparent nach der Beratung — ohne Überraschungen.</div></details><details ><summary><span class="q">Muss ich volljährig sein?</span><span class="pl">+</span></summary><div class="bd">Ja. Wir tätowieren ausschließlich Personen ab 18 Jahren — mit gültigem Ausweis. Keine Ausnahmen.</div></details><details ><summary><span class="q">Wie bekomme ich einen Termin?</span><span class="pl">+</span></summary><div class="bd">Dog Days ist ein privates Atelier — wir arbeiten ausschließlich nach Vereinbarung. Stell einfach eine Anfrage über das Formular, dann melden wir uns persönlich und finden gemeinsam einen Termin.</div></details><details ><summary><span class="q">Kann ich mein eigenes Design mitbringen?</span><span class="pl">+</span></summary><div class="bd">Unbedingt. Bring deine Ideen und Referenzen mit — wir verfeinern sie gemeinsam zu einem individuellen Design, das wirklich zu dir gehört.</div></details><details ><summary><span class="q">Wie hygienisch wird gearbeitet?</span><span class="pl">+</span></summary><div class="bd">Sehr sorgfältig: sterile Einweg-Materialien, EU-konforme Farben und Hygiene nach den gesetzlichen Vorgaben. Deine Gesundheit ist die Grundlage unserer Arbeit.</div></details></div></div></section>
+
+<section><div class="meta"><span class="num">FAQ 04</span><h2 class="name">„Minimal Numbered"</h2>
+<p class="desc">Reduzierte Linien-Liste mit nummerierten Fragen (01, 02 …). Sehr clean &amp; editorial, passt zur typografischen Sprache der Seite. Keine Boxen, volle Ruhe.</p>
+<div class="tags"><span class="tag">Nummeriert</span><span class="tag">Minimal</span><span class="tag">Editorial</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Häufige Fragen</h3></div><div class="f4"><details open><summary><span class="q">Tut Tätowieren weh?</span><span class="pl">+</span></summary><div class="bd">Ehrlich: Es ist unangenehm, aber gut auszuhalten. Wie stark, hängt von der Körperstelle und dir ab. In unserem ruhigen Atelier nehmen wir uns Zeit und machen Pausen, wann immer du sie brauchst.</div></details><details ><summary><span class="q">Was kostet ein Tattoo bei Dog Days?</span><span class="pl">+</span></summary><div class="bd">Der Preis hängt von Größe, Motiv und Aufwand ab. Kleine Arbeiten starten im unteren zweistelligen Bereich, größere berechnen wir fair pro Sitzung. Den genauen Preis nennen wir transparent nach der Beratung — ohne Überraschungen.</div></details><details ><summary><span class="q">Muss ich volljährig sein?</span><span class="pl">+</span></summary><div class="bd">Ja. Wir tätowieren ausschließlich Personen ab 18 Jahren — mit gültigem Ausweis. Keine Ausnahmen.</div></details><details ><summary><span class="q">Wie bekomme ich einen Termin?</span><span class="pl">+</span></summary><div class="bd">Dog Days ist ein privates Atelier — wir arbeiten ausschließlich nach Vereinbarung. Stell einfach eine Anfrage über das Formular, dann melden wir uns persönlich und finden gemeinsam einen Termin.</div></details><details ><summary><span class="q">Kann ich mein eigenes Design mitbringen?</span><span class="pl">+</span></summary><div class="bd">Unbedingt. Bring deine Ideen und Referenzen mit — wir verfeinern sie gemeinsam zu einem individuellen Design, das wirklich zu dir gehört.</div></details><details ><summary><span class="q">Wie hygienisch wird gearbeitet?</span><span class="pl">+</span></summary><div class="bd">Sehr sorgfältig: sterile Einweg-Materialien, EU-konforme Farben und Hygiene nach den gesetzlichen Vorgaben. Deine Gesundheit ist die Grundlage unserer Arbeit.</div></details></div></div></section>
+
+<section><div class="meta"><span class="num">FAQ 05</span><h2 class="name">„Card Grid"</h2>
+<p class="desc">Fragen als Kachel-Raster, jede Karte klappt einzeln auf. Modern &amp; scanbar, gut wenn Fragen unterschiedlich lang sind. Aktive Karte bekommt Gold-Rand.</p>
+<div class="tags"><span class="tag">Karten-Raster</span><span class="tag">Auto-fit</span><span class="tag">Modern</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Häufige Fragen</h3></div><div class="f5"><div class="grid"><details open><summary><span class="q">Tut Tätowieren weh?</span><span class="pl">+</span></summary><div class="bd">Ehrlich: Es ist unangenehm, aber gut auszuhalten. Wie stark, hängt von der Körperstelle und dir ab. In unserem ruhigen Atelier nehmen wir uns Zeit und machen Pausen, wann immer du sie brauchst.</div></details><details ><summary><span class="q">Was kostet ein Tattoo bei Dog Days?</span><span class="pl">+</span></summary><div class="bd">Der Preis hängt von Größe, Motiv und Aufwand ab. Kleine Arbeiten starten im unteren zweistelligen Bereich, größere berechnen wir fair pro Sitzung. Den genauen Preis nennen wir transparent nach der Beratung — ohne Überraschungen.</div></details><details ><summary><span class="q">Muss ich volljährig sein?</span><span class="pl">+</span></summary><div class="bd">Ja. Wir tätowieren ausschließlich Personen ab 18 Jahren — mit gültigem Ausweis. Keine Ausnahmen.</div></details><details ><summary><span class="q">Wie bekomme ich einen Termin?</span><span class="pl">+</span></summary><div class="bd">Dog Days ist ein privates Atelier — wir arbeiten ausschließlich nach Vereinbarung. Stell einfach eine Anfrage über das Formular, dann melden wir uns persönlich und finden gemeinsam einen Termin.</div></details><details ><summary><span class="q">Kann ich mein eigenes Design mitbringen?</span><span class="pl">+</span></summary><div class="bd">Unbedingt. Bring deine Ideen und Referenzen mit — wir verfeinern sie gemeinsam zu einem individuellen Design, das wirklich zu dir gehört.</div></details><details ><summary><span class="q">Wie hygienisch wird gearbeitet?</span><span class="pl">+</span></summary><div class="bd">Sehr sorgfältig: sterile Einweg-Materialien, EU-konforme Farben und Hygiene nach den gesetzlichen Vorgaben. Deine Gesundheit ist die Grundlage unserer Arbeit.</div></details></div></div></div></section>
+
+<div class="foot"><p><b>5 FAQ-Optionen.</b> Im finalen Build kommt FAQPage-JSON-LD dazu (für Google Rich Results &amp; KI-Zitate). Antworten verfeinern wir mit deinen echten Angaben (z. B. Preis-Range). Sag mir eine Nummer (1–5) oder einen Mix.</p></div>
+</body></html>
