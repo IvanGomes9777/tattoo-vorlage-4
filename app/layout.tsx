@@ -60,7 +60,8 @@ const jsonLd = {
       },
       areaServed: "Münster",
       priceRange: "€€",
-      // TODO: Telefon & Öffnungszeiten ergänzen, sobald vom Kunden bestätigt.
+      telephone: "+490000000000", // TODO: echte Telefonnummer (siehe lib/site.ts)
+      // TODO: Öffnungszeiten ergänzen, sobald vom Kunden bestätigt.
       description: "Privates Tattoo-Atelier in Münster. Custom-Tattoos, Termine nach Vereinbarung.",
     },
     {

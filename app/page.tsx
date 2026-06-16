@@ -6,6 +6,7 @@ import { Ablauf } from "@/components/Ablauf";
 import { Faq } from "@/components/Faq";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { FloatingCall } from "@/components/FloatingCall";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <FloatingCall />
     </>
   );
 }

@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { PhoneIcon } from "./PhoneIcon";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
 
 const NAV = [
   { label: "Atelier", href: "#atelier" },
@@ -39,13 +41,13 @@ export function Footer() {
           />
         </span>
 
-        {/* Instagram — prominent */}
-        <div className="mt-5">
+        {/* Instagram + Anruf — prominent */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <a
             href={INSTAGRAM}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full border border-cream/40 px-5 py-2.5 font-sans text-sm font-semibold tracking-[.06em] text-cream transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-ink"
+            className="inline-flex items-center gap-2.5 rounded-full border border-cream/40 px-5 py-2.5 font-sans text-sm font-semibold tracking-[.06em] text-cream transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-ink"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <rect x="2" y="2" width="20" height="20" rx="5" />
@@ -54,10 +56,17 @@ export function Footer() {
             </svg>
             @dogdays_tattoo
           </a>
-          <p className="mt-2 font-mono text-[.62rem] uppercase tracking-[.18em] text-cream/70">
-            Täglich neue Werke auf Instagram
-          </p>
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2.5 rounded-full border border-cream/40 px-5 py-2.5 font-sans text-sm font-semibold tracking-[.06em] text-cream transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-ink"
+          >
+            <PhoneIcon />
+            {PHONE_DISPLAY}
+          </a>
         </div>
+        <p className="mt-2 font-mono text-[.62rem] uppercase tracking-[.18em] text-cream/70">
+          Täglich neue Werke auf Instagram · Termine nach Vereinbarung
+        </p>
 
         {/* Navigation */}
         <nav className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2" aria-label="Footer-Navigation">

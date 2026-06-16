@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
+import { PhoneIcon } from "./PhoneIcon";
+import { PHONE_HREF } from "@/lib/site";
 
 const LEFT_LINKS = [
   { label: "Atelier", href: "#atelier" },
@@ -82,6 +84,15 @@ export function Navbar() {
               <NavLink {...l} />
             </li>
           ))}
+          <li>
+            <a
+              href={PHONE_HREF}
+              aria-label="Anrufen"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 text-gold transition-colors duration-300 hover:bg-gold hover:text-ink"
+            >
+              <PhoneIcon />
+            </a>
+          </li>
         </ul>
 
         {/* Spacer to balance the grid on mobile (right column) */}
@@ -107,6 +118,16 @@ export function Navbar() {
             {l.label}
           </a>
         ))}
+        <a
+          href={PHONE_HREF}
+          onClick={() => setOpen(false)}
+          style={{ transitionDelay: open ? `${0.06 + ALL_LINKS.length * 0.06}s` : "0s" }}
+          className={`mt-2 inline-flex items-center gap-2 rounded-full border border-gold px-6 py-3 font-sans text-base font-semibold uppercase tracking-[.12em] text-gold transition-all duration-500 ${
+            open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+          }`}
+        >
+          <PhoneIcon /> Anrufen
+        </a>
       </div>
     </header>
   );

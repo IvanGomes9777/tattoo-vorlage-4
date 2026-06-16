@@ -2,6 +2,8 @@
 
 import { useActionState, useState } from "react";
 import { submitInquiry, type InquiryState } from "@/app/actions/contact";
+import { PhoneIcon } from "./PhoneIcon";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
 
 const MAP_SRC = "https://www.google.com/maps?q=Weseler%20Str.%2047,%2048151%20M%C3%BCnster&output=embed";
 const initial: InquiryState = { ok: false, message: "" };
@@ -81,12 +83,24 @@ export function Contact() {
             <ul className="mt-4 space-y-4">
               <InfoLine icon="📍" label="Adresse">Weseler Str. 47, 48151 Münster</InfoLine>
               <InfoLine icon="✦" label="Termine">Nach Vereinbarung · Privates Atelier</InfoLine>
+              <InfoLine icon="☎" label="Telefon">
+                <a href={PHONE_HREF} className="text-gold hover:underline">{PHONE_DISPLAY}</a>
+              </InfoLine>
               <InfoLine icon="◐" label="Instagram">
                 <a href="https://www.instagram.com/dogdays_tattoo/" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
                   @dogdays_tattoo
                 </a>
               </InfoLine>
             </ul>
+
+            {/* Anruf-Button */}
+            <a
+              href={PHONE_HREF}
+              className="mt-5 inline-flex items-center justify-center gap-2 rounded-sm border border-gold px-6 py-3 font-sans text-sm font-semibold uppercase tracking-[.14em] text-gold transition-colors duration-300 hover:bg-gold hover:text-ink"
+            >
+              <PhoneIcon /> Jetzt anrufen
+            </a>
+
             <MapEmbed />
           </div>
         </div>
