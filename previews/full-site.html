@@ -139,6 +139,7 @@ footer::before{content:'';position:absolute;inset:0;opacity:.06;background:repea
 .lb img{max-height:85vh;max-width:92vw;border-radius:10px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
 .lb .x{position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:999px;border:1px solid var(--gold);background:none;color:var(--gold);font-size:1.2rem;cursor:pointer}.lb .x:hover{background:var(--gold);color:var(--ink)}
 .lb .lm{margin-top:1rem;text-align:center}.lb .lm .s{font-family:'Space Mono';font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+@media(min-width:1024px){.fab{display:none!important}}
 </style></head><body id="top">
 
 <header class="nav" id="nav"><nav>
@@ -215,7 +216,7 @@ footer::before{content:'';position:absolute;inset:0;opacity:.06;background:repea
 <p class="fcopy">© 2026 Dog Days Tattoo · Weseler Str. 47, 48151 Münster · Tätowierungen ab 18 Jahren</p>
 </div></footer>
 
-<a href="tel:+490000000000" aria-label="Anrufen" style="position:fixed;bottom:20px;right:20px;z-index:90;display:flex;height:56px;width:56px;align-items:center;justify-content:center;border-radius:999px;background:var(--gold);color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.5)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a><div class="lb" id="lb"><button class="x" id="x">✕</button><img id="lbimg" src="" alt="Werk"><div class="lm"><div class="s" id="lbs"></div></div></div>
+<a class="fab" href="tel:+490000000000" aria-label="Anrufen" style="position:fixed;bottom:20px;right:20px;z-index:90;display:flex;height:56px;width:56px;align-items:center;justify-content:center;border-radius:999px;background:var(--gold);color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.5)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a><div class="lb" id="lb"><button class="x" id="x">✕</button><img id="lbimg" src="" alt="Werk"><div class="lm"><div class="s" id="lbs"></div></div></div>
 
 <script>
 addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',scrollY>24));
