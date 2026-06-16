@@ -1,0 +1,48 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — Kontakt Final (01)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0d0d0b;color:#F4EEDF;font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}.sec2{padding:clamp(3rem,8vw,6rem) 0}.wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.h{text-align:center;margin-bottom:clamp(1.5rem,4vw,2.5rem)}.kick{font-family:'Space Mono';font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#E0A53C}
+.h h2{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.6rem,1rem+2.6vw,2.6rem);margin:.5rem 0 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(244,238,223,.14);border-radius:16px;overflow:hidden}
+.form{padding:clamp(1.6rem,4vw,2.6rem)}.side{background:#121210;padding:clamp(1.6rem,4vw,2.6rem);display:flex;flex-direction:column}
+label{display:block;margin-bottom:.7rem}label>span{display:block;font-family:'Space Mono';font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#B6AD95;margin-bottom:.3rem}
+input,textarea{width:100%;background:#0d0d0b;border:1px solid rgba(244,238,223,.2);border-radius:6px;color:#F4EEDF;padding:.7rem .8rem;font-family:inherit;font-size:.9rem}
+input:focus,textarea:focus{outline:none;border-color:#E0A53C}.two{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.hp{position:absolute;left:-9999px}.consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.78rem;color:#B6AD95;margin:.6rem 0 1rem}.consent a{color:#E0A53C;text-decoration:underline}
+.btn{width:100%;border:1px solid #E0A53C;background:#E0A53C;color:#141414;padding:.85rem;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:.3s}.btn:hover{background:transparent;color:#E0A53C}
+.sec{font-family:'Space Mono';font-size:.6rem;color:#7E8262;margin-top:.6rem}
+.ln{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.9rem;color:#C9C2B6;font-weight:300}.ln b{color:#F4EEDF;font-weight:600;display:block;font-family:'Space Mono';font-size:.62rem;letter-spacing:.12em;text-transform:uppercase}.ic{color:#E0A53C}
+.mapwrap{flex:1;margin-top:1rem;border:1px solid rgba(244,238,223,.14);border-radius:8px;overflow:hidden;min-height:220px}
+.mapbtn{width:100%;height:100%;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;background:rgba(94,98,74,.3);border:0;color:#F4EEDF;cursor:pointer;padding:1rem;text-align:center}
+.mapbtn:hover{background:rgba(94,98,74,.5)}.mapbtn small{font-family:'Space Mono';font-size:.6rem;color:#B6AD95;max-width:34ch}
+iframe{width:100%;height:100%;min-height:220px;border:0;filter:grayscale(.4) contrast(1.1)}
+.ok{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:320px}
+.ok .c{width:56px;height:56px;border-radius:50%;border:1px solid #E0A53C;color:#E0A53C;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:1rem}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+</style></head><body>
+<section class="sec2"><div class="wrap"><div class="h"><span class="kick">Lass uns reden</span><h2>Dein Tattoo beginnt hier</h2></div>
+<div class="grid"><div class="form"><div id="formwrap"><h3 style="font-family:'Alfa Slab One',serif;font-weight:400;font-size:1.5rem;margin:0 0 1.2rem">Anfrage senden</h3>
+<div class="two"><label><span>Name</span><input required placeholder="Dein Name"></label><label><span>Telefon</span><input placeholder="Optional"></label></div>
+<label><span>E-Mail</span><input type="email" required placeholder="du@example.de"></label>
+<div class="two"><label><span>Wunsch-Stil</span><input placeholder="z. B. Fine-Line"></label><label><span>Körperstelle</span><input placeholder="z. B. Unterarm"></label></div>
+<label><span>Deine Idee</span><textarea rows="3" required placeholder="Beschreib dein Wunsch-Tattoo, Größe, Referenzen…"></textarea></label>
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="consent"><input type="checkbox" required id="cons"> Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung zu.</label>
+<button class="btn" id="send">Anfrage senden</button>
+<p class="sec">🔒 Honeypot · Rate-Limit · Einwilligung · keine Weitergabe an Dritte</p></div>
+<div class="ok" id="ok"><div class="c">✓</div><p style="max-width:34ch;font-weight:300">Danke für deine Anfrage! Wir melden uns persönlich bei dir.</p></div></div>
+<div class="side"><span class="kick">So erreichst du uns</span><div style="margin-top:1rem">
+<div class="ln"><span class="ic">📍</span><div><b>Adresse</b>Weseler Str. 47, 48151 Münster</div></div>
+<div class="ln"><span class="ic">✦</span><div><b>Termine</b>Nach Vereinbarung · Privates Atelier</div></div>
+<div class="ln"><span class="ic">◐</span><div><b>Instagram</b><a href="https://www.instagram.com/dogdays_tattoo/" style="color:#E0A53C">@dogdays_tattoo</a></div></div></div>
+<div class="mapwrap" id="mapwrap"><button class="mapbtn" id="mapbtn">🗺️<span style="font-weight:600">Google-Karte laden</span><small>Erst nach Klick — dabei werden Daten an Google übertragen (DSGVO).</small></button></div>
+</div></div></div></section>
+<script>
+document.getElementById('mapbtn').onclick=function(){document.getElementById('mapwrap').innerHTML='<iframe src="https://www.google.com/maps?q=Weseler%20Str.%2047,%2048151%20M%C3%BCnster&output=embed" title="Karte" loading="lazy"></iframe>'};
+document.getElementById('send').onclick=function(){if(!document.getElementById('cons').checked){alert('Bitte stimme der Datenschutzerklärung zu.');return}document.getElementById('formwrap').style.display='none';document.getElementById('ok').style.display='flex'};
+</script>
+</body></html>
