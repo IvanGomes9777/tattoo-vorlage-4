@@ -2,7 +2,20 @@
 
 import { useCallback, useEffect, useState } from "react";
 
+// TODO: echten Instagram-Handle bestätigen
+const INSTAGRAM_URL = "https://www.instagram.com/dogdays.tattoo/";
+
 type Work = { thumb: string; full: string; style: string; alt: string };
+
+function InstagramIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 // Platzhalter (Unsplash) — später echte Dog-Days-Werke (nur mit schriftlicher
 // Einwilligung der Kund:innen veröffentlichen, Art. 9 DSGVO).
@@ -86,6 +99,20 @@ export function Gallery() {
       <div className="flex flex-col gap-3">
         <Row works={WORKS} direction="left" onOpen={setOpen} />
         <Row works={[...WORKS].reverse()} direction="right" onOpen={setOpen} />
+      </div>
+
+      {/* Instagram-CTA — eure Hauptpräsenz */}
+      <div className="mt-[clamp(1.8rem,4vw,2.8rem)] flex justify-center px-6">
+        <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-3 rounded-full border border-gold/60 bg-[#121210] px-6 py-3 font-sans text-sm font-semibold uppercase tracking-[.12em] text-cream transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-ink"
+        >
+          <InstagramIcon />
+          <span>Mehr Werke auf Instagram</span>
+          <span className="font-mono text-xs text-gold transition-colors group-hover:text-ink">@dogdays.tattoo</span>
+        </a>
       </div>
 
       {/* Lightbox — Bild in Originalgröße */}
