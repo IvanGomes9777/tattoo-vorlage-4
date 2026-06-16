@@ -1,0 +1,115 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — Werke/Galerie Optionen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#0d0d0b;color:#F4EEDF;font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.head{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) 1.25rem 1rem}
+.kick{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#E0A53C}
+.head h1{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.7rem,1rem+4vw,3rem);margin:.5rem 0 .5rem}
+.head p{color:#B6AD95;max-width:64ch;font-weight:300;line-height:1.65}
+.meta{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3rem) 1.25rem .9rem;display:grid;gap:.5rem;border-top:1px solid rgba(244,238,223,.12)}
+.num{font-family:'Space Mono',monospace;color:#E0A53C;font-size:.78rem;letter-spacing:.2em}
+.name{font-family:'Alfa Slab One',serif;font-size:clamp(1.3rem,1rem+2.2vw,2rem)}
+.desc{color:#B6AD95;font-weight:300;max-width:72ch;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+.tag{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(244,238,223,.2);padding:.35rem .6rem;border-radius:999px;color:#B6AD95}
+.stage{position:relative;margin:0 1.25rem;border:1px solid rgba(244,238,223,.14);border-radius:14px;overflow:hidden;padding:clamp(1.2rem,3vw,2rem)}
+.gtitle{text-align:center;margin-bottom:1.4rem}
+.gtitle h3{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.5rem,1rem+2.4vw,2.2rem);margin:.3rem 0}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.2rem}
+.filters button{font-family:'Space Mono';font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:#B6AD95;border:1px solid rgba(244,238,223,.2);padding:.45rem .9rem;border-radius:999px;cursor:pointer;transition:.25s}
+.filters button:hover,.filters button.on{background:#E0A53C;color:#141414;border-color:#E0A53C}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:.7rem .8rem;background:linear-gradient(transparent,rgba(13,13,11,.92));font-family:'Space Mono';font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:#E0A53C;transform:translateY(100%);transition:.35s}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes mar{to{transform:translateX(-50%)}}
+
+/* G1 masonry */
+.g1 .cols{columns:4 160px;column-gap:10px}
+.g1 .it{position:relative;margin:0 0 10px;break-inside:avoid;border-radius:6px;overflow:hidden;animation:pop .6s both}
+.g1 .it img{width:100%;transition:.5s;filter:grayscale(.25)}
+.g1 .it:hover img{transform:scale(1.06);filter:grayscale(0)}
+.g1 .it:hover .cap{transform:translateY(0)}
+
+/* G2 justified uniform */
+.g2 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.g2 .it{position:relative;aspect-ratio:1;overflow:hidden;border-radius:6px;animation:pop .6s both}
+.g2 .it img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.g2 .it:hover img{transform:scale(1.08)}
+.g2 .it:hover .cap{transform:translateY(0)}
+
+/* G3 auto-scroll rows */
+.g3 .row{overflow:hidden;margin-bottom:10px}
+.g3 .track{display:flex;gap:10px;width:max-content;animation:mar 30s linear infinite}
+.g3 .row.r2 .track{animation-duration:38s;animation-direction:reverse}
+.g3 .it{position:relative;height:160px;aspect-ratio:3/4;border-radius:6px;overflow:hidden;flex:0 0 auto}
+.g3 .it img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2);transition:.4s}
+.g3 .it:hover img{filter:grayscale(0);transform:scale(1.05)}
+
+/* G4 featured spotlight */
+.g4 .lay{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
+.g4 .big{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3}
+.g4 .big img{width:100%;height:100%;object-fit:cover}
+.g4 .big .info{position:absolute;left:0;bottom:0;padding:1rem;background:linear-gradient(transparent,rgba(13,13,11,.92))}
+.g4 .big .info .s{font-family:'Space Mono';font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#E0A53C}
+.g4 .big .info .t{font-family:'Alfa Slab One',serif;font-size:1.1rem}
+.g4 .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-content:start}
+.g4 .thumbs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:5px;cursor:pointer;opacity:.6;transition:.25s;border:2px solid transparent}
+.g4 .thumbs img:hover,.g4 .thumbs img.on{opacity:1;border-color:#E0A53C}
+@media(max-width:680px){.g4 .lay{grid-template-columns:1fr}}
+
+/* G5 flash wall */
+.g5 .wall{position:relative;background:#5E624A;border-radius:8px;min-height:420px;overflow:hidden}
+.g5 .wall::before{content:'';position:absolute;inset:0;opacity:.06;background:repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 22px)}
+.g5 .pin{position:absolute;background:#F4EEDF;padding:6px 6px 20px;box-shadow:0 12px 26px rgba(0,0,0,.4);width:clamp(96px,13vw,150px);transition:.3s;animation:pop .6s both}
+.g5 .pin img{width:100%;aspect-ratio:1;object-fit:cover}
+.g5 .pin:hover{transform:rotate(0) scale(1.05)!important;z-index:9}
+.foot{max-width:1100px;margin:0 auto;padding:2.5rem 1.25rem 4rem;color:#B6AD95;font-weight:300;border-top:1px solid rgba(244,238,223,.12)}
+.foot b{color:#F4EEDF;font-weight:600}
+</style></head><body>
+<header class="head"><span class="kick">Dog Days Tattoo · Münster · Design-Phase 04 · Werke / Galerie</span>
+<h1>„Werke" — 5 Optionen</h1><p>Das Portfolio-Herzstück. Fünf Galerie-Konzepte mit Hover-Effekten &amp; Reveal. Bilder sind Platzhalter — später deine echten Werke (Foto-Freigabe der Kund:innen beachten, DSGVO).</p></header>
+
+<section><div class="meta"><span class="num">WERKE 01</span><h2 class="name">„Masonry + Filter"</h2>
+<p class="desc">Der Klassiker für Tattoos: dichtes Masonry-Raster (verschiedene Höhen) mit Stil-Filtern. Hover: Bild zoomt, wird farbig, Stil-Label fährt ein. Lightbox bei Klick. Zeigt viele Werke kompakt.</p>
+<div class="tags"><span class="tag">Masonry</span><span class="tag">Stil-Filter</span><span class="tag">B/W → Color</span><span class="tag">Lightbox</span></div></div>
+<div class="stage"><div class="g1"><div class="gtitle"><span class="kick">Ausgewählte Arbeiten</span><h3>Unsere Werke</h3></div>
+<div class="filters"><button class="on">Alle</button><button class="">Blackwork</button><button class="">Fine-Line</button><button class="">Realism</button><button class="">Geometric</button><button class="">Lettering</button><button class="">Custom</button></div><div class="cols"><div class="it" style="animation-delay:0.00s"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=400&q=60" alt="Werk 1"><span class="cap">Blackwork · Custom</span></div><div class="it" style="animation-delay:0.05s"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=400&q=60" alt="Werk 2"><span class="cap">Fine-Line · Custom</span></div><div class="it" style="animation-delay:0.10s"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=400&q=60" alt="Werk 3"><span class="cap">Realism · Custom</span></div><div class="it" style="animation-delay:0.15s"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=400&q=60" alt="Werk 4"><span class="cap">Geometric · Custom</span></div><div class="it" style="animation-delay:0.20s"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=400&q=60" alt="Werk 5"><span class="cap">Lettering · Custom</span></div><div class="it" style="animation-delay:0.25s"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=400&q=60" alt="Werk 6"><span class="cap">Custom · Custom</span></div><div class="it" style="animation-delay:0.30s"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=400&q=60" alt="Werk 7"><span class="cap">Blackwork · Custom</span></div><div class="it" style="animation-delay:0.35s"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=400&q=60" alt="Werk 8"><span class="cap">Fine-Line · Custom</span></div><div class="it" style="animation-delay:0.40s"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=400&q=60" alt="Werk 9"><span class="cap">Realism · Custom</span></div><div class="it" style="animation-delay:0.45s"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=400&q=60" alt="Werk 10"><span class="cap">Geometric · Custom</span></div><div class="it" style="animation-delay:0.50s"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=400&q=60" alt="Werk 11"><span class="cap">Lettering · Custom</span></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 02</span><h2 class="name">„Justified Grid" — Clean</h2>
+<p class="desc">Ruhiges, gleichmäßiges Quadrat-Raster — galerieartig, sehr aufgeräumt. Hover: Zoom + Bildunterschrift gleitet hoch. Perfekt, wenn die Werke für sich sprechen sollen.</p>
+<div class="tags"><span class="tag">Uniform Grid</span><span class="tag">Caption-Slide</span><span class="tag">Minimal</span></div></div>
+<div class="stage"><div class="g2"><div class="gtitle"><h3>Unsere Werke</h3></div><div class="grid"><div class="it" style="animation-delay:0.00s"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt="Werk 1"><span class="cap">Blackwork · Custom</span></div><div class="it" style="animation-delay:0.05s"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=500&q=60" alt="Werk 2"><span class="cap">Fine-Line · Custom</span></div><div class="it" style="animation-delay:0.10s"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=500&q=60" alt="Werk 3"><span class="cap">Realism · Custom</span></div><div class="it" style="animation-delay:0.15s"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=60" alt="Werk 4"><span class="cap">Geometric · Custom</span></div><div class="it" style="animation-delay:0.20s"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=500&q=60" alt="Werk 5"><span class="cap">Lettering · Custom</span></div><div class="it" style="animation-delay:0.25s"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=500&q=60" alt="Werk 6"><span class="cap">Custom · Custom</span></div><div class="it" style="animation-delay:0.30s"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=500&q=60" alt="Werk 7"><span class="cap">Blackwork · Custom</span></div><div class="it" style="animation-delay:0.35s"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt="Werk 8"><span class="cap">Fine-Line · Custom</span></div><div class="it" style="animation-delay:0.40s"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=500&q=60" alt="Werk 9"><span class="cap">Realism · Custom</span></div><div class="it" style="animation-delay:0.45s"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=500&q=60" alt="Werk 10"><span class="cap">Geometric · Custom</span></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 03</span><h2 class="name">„Endless Rows" — Auto-Scroll</h2>
+<p class="desc">Zwei gegenläufig laufende Bild-Reihen — dauerhaft in Bewegung, wie ein lebendiger Feed. Greift die Karussell-Sprache der Hero auf (roter Faden). Hover färbt &amp; vergrößert.</p>
+<div class="tags"><span class="tag">Auto-Scroll Rows</span><span class="tag">Gegenläufig</span><span class="tag">Hero-Konsistenz</span></div></div>
+<div class="stage"><div class="g3"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="row"><div class="track"><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div></div></div>
+<div class="row r2"><div class="track"><div class="it"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=60" alt=""></div></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 04</span><h2 class="name">„Featured Spotlight" — interaktiv</h2>
+<p class="desc">Ein großes Hauptbild plus Thumbnail-Raster zum Durchklicken (live!). Wie eine kuratierte Ausstellung — ideal, um einzelne Werke groß &amp; mit Kontext zu zeigen. Klick die Thumbs.</p>
+<div class="tags"><span class="tag">Featured + Thumbs</span><span class="tag">Klick-Swap</span><span class="tag">Kuratiert</span></div></div>
+<div class="stage"><div class="g4"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="lay"><div class="big"><img id="bigimg" src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=900&q=60" alt="Ausgewähltes Werk"><div class="info"><div class="s">Blackwork · Custom</div><div class="t">Unterarm — Custom Design</div></div></div>
+<div class="thumbs"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=300&q=60" class="on" data-big="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=900&q=60" alt="Werk 1"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=300&q=60" class="" data-big="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=900&q=60" alt="Werk 2"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=300&q=60" class="" data-big="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=900&q=60" alt="Werk 3"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=300&q=60" class="" data-big="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=900&q=60" alt="Werk 4"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=300&q=60" class="" data-big="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=900&q=60" alt="Werk 5"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=300&q=60" class="" data-big="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=900&q=60" alt="Werk 6"></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 05</span><h2 class="name">„Flash Wall" — Vintage Pinwand</h2>
+<p class="desc">Werke wie angepinnte Flash-Sheets an der Oliv-Wand — gedreht, mit Schatten, „einrastend". Bei Hover richtet sich das Bild gerade &amp; hebt sich. Maximaler Vintage-Atelier-Charme (Logo-DNA).</p>
+<div class="tags"><span class="tag">Flash-Wall</span><span class="tag">Rotiert/Pinned</span><span class="tag">Hover-Straighten</span></div></div>
+<div class="stage"><div class="g5"><div class="gtitle"><h3>Unsere Werke</h3></div><div class="wall"><div class="pin" style="left:4%;top:8%;transform:rotate(-7deg);animation-delay:0.00s"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=360&q=60" alt=""></div><div class="pin" style="left:20%;top:46%;transform:rotate(5deg);animation-delay:0.07s"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=360&q=60" alt=""></div><div class="pin" style="left:38%;top:10%;transform:rotate(-4deg);animation-delay:0.14s"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=360&q=60" alt=""></div><div class="pin" style="left:55%;top:50%;transform:rotate(8deg);animation-delay:0.21s"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=360&q=60" alt=""></div><div class="pin" style="left:70%;top:14%;transform:rotate(-6deg);animation-delay:0.28s"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=360&q=60" alt=""></div><div class="pin" style="left:82%;top:48%;transform:rotate(6deg);animation-delay:0.35s"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=360&q=60" alt=""></div><div class="pin" style="left:50%;top:78%;transform:rotate(-3deg);animation-delay:0.42s"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=360&q=60" alt=""></div></div></div></div></section>
+
+<div class="foot"><p><b>5 Galerie-Optionen.</b> Bilder = Unsplash-Platzhalter. Wichtig fürs echte Portfolio: Kundenfotos nur mit schriftlicher Einwilligung (Art. 9 DSGVO). Sag mir eine Nummer (1–5) oder einen Mix.</p></div>
+<script>
+document.querySelectorAll('.g4 .thumbs img').forEach(t=>t.addEventListener('click',()=>{
+ document.getElementById('bigimg').src=t.dataset.big;
+ document.querySelectorAll('.g4 .thumbs img').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+}));
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+ b.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+}));
+</script>
+</body></html>
