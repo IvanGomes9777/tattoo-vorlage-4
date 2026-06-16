@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — Navbar Optionen (6–10) · Markenpalette</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitter:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Libre+Franklin:wght@400;500;600;700&family=Rye&family=Space+Mono:wght@400;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --olive:#9DA17E; --olive-deep:#7E8262; --olive-dark:#5E624A;
+    --gold:#E0A53C; --gold-deep:#C9842B;
+    --black:#141414; --ink:#1d1d18;
+    --cream:#F4EEDF; --cream2:#E9DEC6; --cream-dim:#B6AD95;
+    --line:rgba(20,20,20,.16);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#0d0d0b;color:var(--cream);font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  .pagehead{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,4rem) 1.25rem 1rem}
+  .kicker{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+  .pagehead h1{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.7rem,1rem+4vw,3.2rem);margin:.5rem 0 .6rem;line-height:1.05;color:var(--cream)}
+  .pagehead p{color:var(--cream-dim);max-width:62ch;font-weight:300;line-height:1.65}
+  .swatches{display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap}
+  .sw{display:flex;align-items:center;gap:.5rem;font-family:'Space Mono',monospace;font-size:.66rem;color:var(--cream-dim)}
+  .sw i{width:18px;height:18px;border-radius:4px;display:inline-block;border:1px solid var(--line)}
+
+  .opt{border-top:1px solid rgba(244,238,223,.12)}
+  .opt__meta{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3.2rem) 1.25rem 1rem;display:grid;gap:.5rem}
+  .opt__num{font-family:'Space Mono',monospace;color:var(--gold);font-size:.78rem;letter-spacing:.2em}
+  .opt__name{font-family:'Alfa Slab One',serif;font-size:clamp(1.3rem,1rem+2.2vw,2rem);font-weight:400}
+  .opt__desc{color:var(--cream-dim);font-weight:300;max-width:70ch;line-height:1.6}
+  .opt__tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+  .tag{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(244,238,223,.2);padding:.35rem .6rem;border-radius:999px;color:var(--cream-dim)}
+
+  .stage{position:relative;height:clamp(360px,52vh,520px);overflow:hidden;border:1px solid rgba(244,238,223,.14);margin:0 1.25rem;border-radius:14px}
+  .stage__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.25) contrast(1.02) brightness(.9);transform:scale(1.06);animation:kb 20s ease-in-out infinite alternate}
+  .stage__veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,11,.15),rgba(13,13,11,.55) 70%,#0d0d0b);pointer-events:none}
+  @keyframes kb{to{transform:scale(1.15)}}
+  .stage__hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:6;font-family:'Space Mono',monospace;font-size:.64rem;letter-spacing:.18em;color:var(--cream-dim);text-transform:uppercase;opacity:.7}
+  @media (prefers-reduced-motion:reduce){.stage__bg{animation:none}}
+
+  /* ===== 06 — CREAM VINTAGE BANNER ===== */
+  .n6{position:absolute;inset:0 0 auto 0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:.9rem clamp(1rem,3vw,2.2rem);background:var(--cream);color:var(--black);border-bottom:3px double var(--gold-deep)}
+  .n6__logo{font-family:'Rye',serif;font-size:1.5rem;color:var(--gold-deep);text-shadow:1px 1px 0 rgba(20,20,20,.18)}
+  .n6__nav{display:flex;gap:clamp(.9rem,2.2vw,1.9rem);align-items:center}
+  .n6__nav a{font-family:'Bitter',serif;font-weight:600;font-size:.86rem;color:var(--black);position:relative}
+  .n6__nav a::after{content:"★";position:absolute;left:50%;bottom:-14px;transform:translateX(-50%) scale(0);color:var(--gold-deep);font-size:.6rem;transition:.3s}
+  .n6__nav a:hover{color:var(--gold-deep)}
+  .n6__nav a:hover::after{transform:translateX(-50%) scale(1)}
+  .n6__cta{background:var(--gold-deep);color:var(--cream);font-family:'Bitter',serif;font-weight:700;padding:.5rem 1.2rem;border-radius:3px;box-shadow:2px 2px 0 var(--black);transition:.2s}
+  .n6__cta:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--black)}
+
+  /* ===== 07 — OLIVE FIELD (logo bg match) ===== */
+  .n7{position:absolute;inset:0 0 auto 0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.1rem clamp(1rem,3vw,2.2rem);background:var(--olive);color:var(--black);transition:.5s}
+  .n7.solid{background:var(--olive-dark);color:var(--cream)}
+  .n7__logo{font-family:'Alfa Slab One',serif;font-size:1.3rem;color:var(--black);letter-spacing:.01em}
+  .n7.solid .n7__logo{color:var(--gold)}
+  .n7__nav{display:flex;gap:clamp(.9rem,2.2vw,2rem);align-items:center}
+  .n7__nav a{font-family:'Oswald',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:.84rem;padding-bottom:3px;border-bottom:2px solid transparent;transition:.3s}
+  .n7__nav a:hover{border-color:var(--gold)}
+  .n7__cta{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;background:var(--black);color:var(--gold);padding:.55rem 1.2rem;border-radius:2px;transition:.3s}
+  .n7__cta:hover{background:var(--gold);color:var(--black)}
+
+  /* ===== 08 — CENTERED EMBLEM (split nav around logo) ===== */
+  .n8{position:absolute;inset:0 0 auto 0;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1rem clamp(1rem,3vw,2.2rem);background:rgba(13,13,11,.55);backdrop-filter:blur(8px);border-bottom:1px solid rgba(224,165,60,.3)}
+  .n8__group{display:flex;gap:clamp(.8rem,2vw,1.7rem)}
+  .n8__group.r{justify-content:flex-end}
+  .n8 a{font-family:'Libre Franklin',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);transition:.3s}
+  .n8 a:hover{color:var(--gold)}
+  .n8__emblem{text-align:center;line-height:1}
+  .n8__emblem .est{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.3em;color:var(--gold);display:block}
+  .n8__emblem .name{font-family:'Alfa Slab One',serif;font-size:1.25rem;color:var(--cream);display:block;margin:.15rem 0}
+  .n8__emblem .ln{width:90px;height:1px;background:var(--gold);margin:.25rem auto 0;position:relative}
+  .n8__emblem .ln::before,.n8__emblem .ln::after{content:"✦";position:absolute;top:-7px;color:var(--gold);font-size:.55rem}
+  .n8__emblem .ln::before{left:-12px}.n8__emblem .ln::after{right:-12px}
+  @media (max-width:760px){.n8{grid-template-columns:1fr}.n8__group{display:none}}
+
+  /* ===== 09 — MARQUEE TOP + NAV ===== */
+  .n9{position:absolute;inset:0 0 auto 0;z-index:10}
+  .n9__ticker{background:var(--gold-deep);color:var(--black);overflow:hidden;white-space:nowrap;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 0}
+  .n9__ticker span{display:inline-block;padding-left:100%;animation:marq 16s linear infinite}
+  @keyframes marq{to{transform:translateX(-100%)}}
+  .n9__bar{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1rem,3vw,2.2rem);background:var(--cream);color:var(--black)}
+  .n9__logo{font-family:'Alfa Slab One',serif;font-size:1.25rem;color:var(--black)}
+  .n9__logo em{color:var(--gold-deep);font-style:normal}
+  .n9__nav{display:flex;gap:clamp(.9rem,2.2vw,1.9rem);align-items:center}
+  .n9__nav a{font-family:'Libre Franklin',sans-serif;font-weight:600;font-size:.82rem;color:var(--black);transition:.25s;position:relative}
+  .n9__nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--gold-deep);transform:scaleX(0);transform-origin:left;transition:.3s}
+  .n9__nav a:hover::after{transform:scaleX(1)}
+  .n9__cta{background:var(--black);color:var(--cream);font-family:'Libre Franklin',sans-serif;font-weight:600;padding:.5rem 1.1rem;border-radius:3px;transition:.3s}
+  .n9__cta:hover{background:var(--gold-deep)}
+  @media (prefers-reduced-motion:reduce){.n9__ticker span{animation:none;padding-left:1rem}}
+
+  /* ===== 10 — WESTERN SALOON ===== */
+  .n10{position:absolute;inset:0 0 auto 0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.05rem clamp(1rem,3vw,2.2rem);background:var(--black);color:var(--cream);border-bottom:4px solid var(--gold);box-shadow:0 4px 0 var(--black),0 5px 0 var(--gold-deep)}
+  .n10__logo{font-family:'Rye',serif;font-size:1.5rem;color:var(--gold);letter-spacing:.01em}
+  .n10__nav{display:flex;gap:0;align-items:center}
+  .n10__nav a{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;padding:0 clamp(.7rem,1.6vw,1.2rem);position:relative;color:var(--cream);transition:.25s}
+  .n10__nav a:not(:last-child)::after{content:"✦";position:absolute;right:-4px;top:50%;transform:translateY(-50%);color:var(--gold-deep);font-size:.5rem}
+  .n10__nav a:hover{color:var(--gold)}
+  .n10__cta{margin-left:1rem;font-family:'Rye',serif;font-size:.95rem;background:var(--gold);color:var(--black);padding:.45rem 1.2rem;border-radius:3px;border:2px solid var(--cream);transition:.25s}
+  .n10__cta:hover{background:var(--cream);border-color:var(--gold)}
+
+  .footnote{max-width:1100px;margin:0 auto;padding:3rem 1.25rem 5rem;color:var(--cream-dim);font-weight:300;border-top:1px solid rgba(244,238,223,.12)}
+  .footnote b{color:var(--cream);font-weight:600}
+</style>
+</head>
+<body>
+  <header class="pagehead">
+    <span class="kicker">Dog Days Tattoo · Münster · Design-Phase 01 · Set 2</span>
+    <h1>Navbar — Optionen 6–10</h1>
+    <p>Diesmal in deiner echten Markenpalette aus dem Logo: Vintage-Americana mit Oliv, Senf-Gold, Schwarz &amp; Creme. Alles live — scrollen, hovern, ausprobieren.</p>
+    <div class="swatches">
+      <span class="sw"><i style="background:#9DA17E"></i>Oliv</span>
+      <span class="sw"><i style="background:#E0A53C"></i>Senf-Gold</span>
+      <span class="sw"><i style="background:#141414"></i>Schwarz</span>
+      <span class="sw"><i style="background:#F4EEDF"></i>Creme</span>
+    </div>
+  </header>
+
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 06</span>
+      <h2 class="opt__name">„Cream Parlor" — Vintage-Banner</h2>
+      <p class="opt__desc">Heller Creme-Grund wie altes Tattoo-Flash-Papier, Western-Schrift (Rye) in Gold, doppelte Zierlinie. Links zeigen bei Hover einen kleinen Stern, CTA mit „Stempel"-Schatten der sich anhebt. Klassisches Parlor-Feeling.</p>
+      <div class="opt__tags"><span class="tag">Rye + Bitter</span><span class="tag">Stamp-Shadow CTA</span><span class="tag">Star-Hover</span></div>
+    </div>
+    <div class="stage">
+      <img class="stage__bg" alt="Old school tattoo" loading="lazy" src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=1600&q=70">
+      <div class="stage__veil"></div>
+      <nav class="n6">
+        <div class="n6__logo">Dog Days</div>
+        <div class="n6__nav"><a href="#">Atelier</a><a href="#">Künstler</a><a href="#">Flash &amp; Custom</a><a href="#">Ablauf</a><a href="#" class="n6__cta">Termin</a></div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 07</span>
+      <h2 class="opt__name">„Olive Field" — Logo-Match</h2>
+      <p class="opt__desc">Die Bar trägt exakt das Olivgrün des Logos — die Marke verschmilzt mit der Navigation. Slab-Logo schwarz, Oswald-Links mit Gold-Unterstrich. Beim Scrollen wird die Bar dunkel-oliv, Logo glüht in Gold.</p>
+      <div class="opt__tags"><span class="tag">Alfa Slab + Oswald</span><span class="tag">Logo-Farbe als BG</span><span class="tag">Scroll → Dark-Oliv</span></div>
+    </div>
+    <div class="stage" data-solid="n7">
+      <img class="stage__bg" alt="Tattoo arm" loading="lazy" src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1600&q=70">
+      <div class="stage__veil"></div>
+      <nav class="n7">
+        <div class="n7__logo">DOG DAYS</div>
+        <div class="n7__nav"><a href="#">Atelier</a><a href="#">Künstler</a><a href="#">Werke</a><a href="#">FAQ</a><a href="#" class="n7__cta">Termin anfragen</a></div>
+      </nav>
+      <span class="stage__hint">↕ in der Box scrollen</span>
+    </div>
+  </section>
+
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 08</span>
+      <h2 class="opt__name">„Centered Emblem" — Wappen-Mitte</h2>
+      <p class="opt__desc">Das Logo/Wappen thront mittig, Navigation teilt sich symmetrisch links &amp; rechts — wie ein Markenzeichen, nicht nur ein Menü. „EST."-Marke + Zierlinie mit Sternen. Sehr „Atelier", sehr ikonisch.</p>
+      <div class="opt__tags"><span class="tag">Alfa Slab + Libre Franklin</span><span class="tag">Symmetrisch</span><span class="tag">Emblem-zentriert</span></div>
+    </div>
+    <div class="stage">
+      <img class="stage__bg" alt="Tattoo studio" loading="lazy" src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1600&q=70">
+      <div class="stage__veil"></div>
+      <nav class="n8">
+        <div class="n8__group"><a href="#">Atelier</a><a href="#">Künstler</a><a href="#">Werke</a></div>
+        <div class="n8__emblem"><span class="est">EST · MÜNSTER</span><span class="name">DOG DAYS</span><span class="ln"></span></div>
+        <div class="n8__group r"><a href="#">Ablauf</a><a href="#">FAQ</a><a href="#">Termin</a></div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 09</span>
+      <h2 class="opt__name">„Magazine Ticker" — Laufband + Nav</h2>
+      <p class="opt__desc">Oben ein goldenes Laufband mit rotierenden Infos („Termine nach Vereinbarung · Weseler Str. 47 · Münster"), darunter eine helle redaktionelle Navbar. Bringt Atmosphäre &amp; wichtige Fakten sofort ins Bild.</p>
+      <div class="opt__tags"><span class="tag">Alfa Slab + Libre Franklin</span><span class="tag">Marquee-Ticker</span><span class="tag">Underline-Wipe</span></div>
+    </div>
+    <div class="stage">
+      <img class="stage__bg" alt="Tattoo detail" loading="lazy" src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=1600&q=70">
+      <div class="stage__veil"></div>
+      <nav class="n9">
+        <div class="n9__ticker"><span>Termine nach Vereinbarung ✦ Weseler Str. 47, Münster ✦ Privates Tattoo-Atelier ✦ 5,0 ★ auf Google ✦ Termine nach Vereinbarung ✦</span></div>
+        <div class="n9__bar">
+          <div class="n9__logo">Dog <em>Days</em></div>
+          <div class="n9__nav"><a href="#">Atelier</a><a href="#">Künstler</a><a href="#">Werke</a><a href="#">Ablauf</a><a href="#" class="n9__cta">Termin anfragen</a></div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 10</span>
+      <h2 class="opt__name">„Saloon" — Bold Western</h2>
+      <p class="opt__desc">Schwarze Bar mit kräftiger Gold-Doppelkante, Rye-Western-Logo, Oswald-Links mit Stern-Trennern. Lautes, selbstbewusstes Old-School-Statement — passt zur springenden-Hunde-Energie des Logos.</p>
+      <div class="opt__tags"><span class="tag">Rye + Oswald</span><span class="tag">Gold Double-Border</span><span class="tag">Star-Divider</span></div>
+    </div>
+    <div class="stage">
+      <img class="stage__bg" alt="Tattoo blackwork" loading="lazy" src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1600&q=70">
+      <div class="stage__veil"></div>
+      <nav class="n10">
+        <div class="n10__logo">Dog Days</div>
+        <div class="n10__nav"><a href="#">Atelier</a><a href="#">Künstler</a><a href="#">Werke</a><a href="#">FAQ</a><a href="#" class="n10__cta">Termin</a></div>
+      </nav>
+    </div>
+  </section>
+
+  <div class="footnote">
+    <p><b>Alle in der Logo-Palette.</b> Bilder = Unsplash-Platzhalter (legal, thematisch), später echte Dog-Days-Werke. Sag mir eine Nummer (1–10) oder einen Mix — dann baue ich sie als Next.js-Komponente.</p>
+  </div>
+
+<script>
+  // scroll-solid for n7
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    const n=e.target.querySelector('.n7'); if(!n)return;
+    n.classList.toggle('solid', e.intersectionRatio<.9);
+  }),{threshold:[.9]});
+  document.querySelectorAll('.stage[data-solid]').forEach(s=>io.observe(s));
+  document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+</script>
+</body>
+</html>
