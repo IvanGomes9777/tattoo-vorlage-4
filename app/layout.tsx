@@ -43,7 +43,7 @@ const jsonLd = {
       name: "Dog Days Tattoo",
       url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/icon.svg` },
-      sameAs: ["https://www.instagram.com/dogdays.tattoo/"], // TODO: echten Handle bestätigen
+      sameAs: ["https://www.instagram.com/dogdays_tattoo/"],
     },
     {
       "@type": ["LocalBusiness", "TattooParlor"],

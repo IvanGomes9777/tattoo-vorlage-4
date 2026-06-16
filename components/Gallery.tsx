@@ -2,8 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-// TODO: echten Instagram-Handle bestätigen
-const INSTAGRAM_URL = "https://www.instagram.com/dogdays.tattoo/";
+const INSTAGRAM_URL = "https://www.instagram.com/dogdays_tattoo/";
 
 type Work = { thumb: string; full: string; style: string; alt: string };
 
@@ -111,7 +110,7 @@ export function Gallery() {
         >
           <InstagramIcon />
           <span>Mehr Werke auf Instagram</span>
-          <span className="font-mono text-xs text-gold transition-colors group-hover:text-ink">@dogdays.tattoo</span>
+          <span className="font-mono text-xs text-gold transition-colors group-hover:text-ink">@dogdays_tattoo</span>
         </a>
       </div>
 
