@@ -12,7 +12,7 @@
  */
 import Image from "next/image";
 
-const USE_REAL_ASSET = false;
+const USE_REAL_ASSET = true;
 
 type LogoProps = {
   /** Höhe in px (responsive über CSS möglich). */
@@ -25,15 +25,16 @@ type LogoProps = {
 
 export function Logo({ size = 64, framed = true, className, priority }: LogoProps) {
   if (USE_REAL_ASSET) {
+    // Echtes Logo (quadratisch 150×150, enthält Olive-Quadrat + Schrift).
     return (
       <Image
-        src="/logo.png"
+        src="/dogdaytattoo-logo.png"
         alt="Dog Days Tattoo — Logo"
         width={size}
         height={size}
         priority={priority}
         className={className}
-        style={{ height: size, width: "auto" }}
+        style={{ height: size, width: size, borderRadius: framed ? size * 0.16 : 0, objectFit: "contain" }}
       />
     );
   }
