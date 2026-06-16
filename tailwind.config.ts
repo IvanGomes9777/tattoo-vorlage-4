@@ -28,6 +28,8 @@ const config: Config = {
         "marquee-left": { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
         "marquee-right": { from: { transform: "translateX(-50%)" }, to: { transform: "translateX(0)" } },
         glow: { "0%,100%": { opacity: "0.45" }, "50%": { opacity: "0.9" } },
+        "seal-in": { from: { opacity: "0", transform: "scale(.8) rotate(-8deg)" }, to: { opacity: "1", transform: "scale(1) rotate(0)" } },
+        "clip-up": { from: { clipPath: "inset(0 0 100% 0)" }, to: { clipPath: "inset(0 0 0 0)" } },
       },
       animation: {
         run: "run 4s ease-in-out infinite",
@@ -36,6 +38,8 @@ const config: Config = {
         "marquee-left": "marquee-left 26s linear infinite",
         "marquee-right": "marquee-right 30s linear infinite",
         glow: "glow 4s ease-in-out infinite",
+        "seal-in": "seal-in .8s cubic-bezier(.2,.9,.3,1.2) both",
+        "clip-up": "clip-up 1.1s ease both",
       },
     },
   },
