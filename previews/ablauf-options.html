@@ -1,0 +1,102 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — Ablauf Optionen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#0d0d0b;color:#F4EEDF;font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.head{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) 1.25rem 1rem}
+.kick{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#E0A53C}
+.head h1{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.7rem,1rem+4vw,3rem);margin:.5rem 0 .5rem}
+.head p{color:#B6AD95;max-width:64ch;font-weight:300;line-height:1.65}
+.meta{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3rem) 1.25rem .9rem;display:grid;gap:.5rem;border-top:1px solid rgba(244,238,223,.12)}
+.num{font-family:'Space Mono',monospace;color:#E0A53C;font-size:.78rem;letter-spacing:.2em}
+.name{font-family:'Alfa Slab One',serif;font-size:clamp(1.3rem,1rem+2.2vw,2rem)}
+.desc{color:#B6AD95;font-weight:300;max-width:72ch;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+.tag{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(244,238,223,.2);padding:.35rem .6rem;border-radius:999px;color:#B6AD95}
+.stage{position:relative;margin:0 1.25rem;border:1px solid rgba(244,238,223,.14);border-radius:14px;overflow:hidden;padding:clamp(1.6rem,4vw,3rem)}
+.gtitle{text-align:center;margin-bottom:1.6rem}
+.gtitle h3{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.5rem,1rem+2.4vw,2.2rem);margin:.3rem 0}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes draw{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes drawx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.up{animation:up .7s cubic-bezier(.2,.8,.2,1) both}
+
+/* P1 vertical timeline */
+.p1{max-width:680px;margin:0 auto;position:relative;padding-left:3rem}
+.p1::before{content:'';position:absolute;left:14px;top:6px;bottom:6px;width:2px;background:linear-gradient(#E0A53C,rgba(224,165,60,.2));transform-origin:top;animation:draw 1.1s .2s both}
+.p1 .st{position:relative;margin-bottom:1.8rem}
+.p1 .st .dot{position:absolute;left:-3rem;top:0;width:30px;height:30px;border-radius:50%;background:#0d0d0b;border:2px solid #E0A53C;color:#E0A53C;display:flex;align-items:center;justify-content:center;font-family:'Space Mono';font-size:.72rem}
+.p1 .st h4{font-family:'Alfa Slab One',serif;font-weight:400;font-size:1.2rem;margin:.1rem 0 .35rem;color:#F4EEDF}
+.p1 .st p{margin:0;color:#B6AD95;font-weight:300;line-height:1.6}
+
+/* P2 horizontal stepper */
+.p2 .track{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.p2 .track::before{content:'';position:absolute;left:8%;right:8%;top:24px;height:2px;background:rgba(224,165,60,.4);transform-origin:left;animation:drawx 1.2s .2s both}
+.p2 .st{text-align:center;padding:0 .6rem;position:relative}
+.p2 .st .n{width:50px;height:50px;margin:0 auto;border-radius:50%;background:#0d0d0b;border:2px solid #E0A53C;color:#E0A53C;display:flex;align-items:center;justify-content:center;font-family:'Alfa Slab One',serif;position:relative;z-index:2}
+.p2 .st h4{font-family:'Alfa Slab One',serif;font-weight:400;font-size:1rem;margin:.8rem 0 .3rem;color:#F4EEDF}
+.p2 .st p{margin:0;color:#B6AD95;font-weight:300;font-size:.82rem;line-height:1.5}
+@media(max-width:760px){.p2 .track{grid-template-columns:1fr;gap:1.4rem}.p2 .track::before{display:none}}
+
+/* P3 zigzag */
+.p3 .st{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center;margin-bottom:1.4rem}
+.p3 .st:nth-child(even) .im{order:2}
+.p3 .im{aspect-ratio:16/10;border-radius:8px;overflow:hidden}
+.p3 .im img{width:100%;height:100%;object-fit:cover;filter:sepia(.18)}
+.p3 .tx .n{font-family:'Space Mono';color:#E0A53C;font-size:.8rem;letter-spacing:.2em}
+.p3 .tx h4{font-family:'Alfa Slab One',serif;font-weight:400;font-size:1.3rem;margin:.3rem 0;color:#F4EEDF}
+.p3 .tx p{margin:0;color:#B6AD95;font-weight:300;line-height:1.6}
+@media(max-width:680px){.p3 .st{grid-template-columns:1fr}.p3 .st:nth-child(even) .im{order:0}}
+
+/* P4 big numbers */
+.p4{counter-reset:s}
+.p4 .st{display:flex;gap:1.4rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(244,238,223,.1)}
+.p4 .st .n{font-family:'Alfa Slab One',serif;font-size:clamp(2.4rem,6vw,4rem);line-height:.9;color:transparent;-webkit-text-stroke:1.5px #E0A53C;flex:0 0 auto;width:2.2ch;text-align:right}
+.p4 .st h4{font-family:'Alfa Slab One',serif;font-weight:400;font-size:1.3rem;margin:.4rem 0 .35rem;color:#F4EEDF}
+.p4 .st p{margin:0;color:#B6AD95;font-weight:300;line-height:1.6;max-width:52ch}
+
+/* P5 accordion */
+.p5{max-width:720px;margin:0 auto}
+.p5 .ac{border:1px solid rgba(244,238,223,.14);border-radius:10px;margin-bottom:.7rem;overflow:hidden;background:#121210}
+.p5 .ac summary{list-style:none;cursor:pointer;padding:1.1rem 1.2rem;display:flex;align-items:center;gap:1rem;font-family:'Alfa Slab One',serif;font-size:1.1rem;color:#F4EEDF}
+.p5 .ac summary::-webkit-details-marker{display:none}
+.p5 .ac summary .n{font-family:'Space Mono';color:#E0A53C;font-size:.8rem}
+.p5 .ac summary .pl{margin-left:auto;color:#E0A53C;transition:.3s}
+.p5 .ac[open] summary .pl{transform:rotate(45deg)}
+.p5 .ac .bd{padding:0 1.2rem 1.2rem 3.4rem;color:#B6AD95;font-weight:300;line-height:1.6}
+.foot{max-width:1100px;margin:0 auto;padding:2.5rem 1.25rem 4rem;color:#B6AD95;font-weight:300;border-top:1px solid rgba(244,238,223,.12)}
+.foot b{color:#F4EEDF;font-weight:600}
+</style></head><body>
+<header class="head"><span class="kick">Dog Days Tattoo · Münster · Design-Phase 05 · Ablauf</span>
+<h1>„So funktioniert's" — 5 Optionen</h1><p>Der Weg von der Idee zum Tattoo — nimmt Unsicherheit, führt sanft zur Anfrage. Fünf Layouts, jedes mit eigener Animation. Texte sind Entwürfe.</p></header>
+
+<section><div class="meta"><span class="num">ABLAUF 01</span><h2 class="name">„Vertical Timeline"</h2>
+<p class="desc">Klassische vertikale Zeitleiste mit goldener Linie, die sich von oben zeichnet, und nummerierten Punkten. Sehr lesbar, premium, geführt — ideal für „Schritt für Schritt".</p>
+<div class="tags"><span class="tag">Gold-Linie</span><span class="tag">Line-Draw</span><span class="tag">Nummeriert</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Von der Idee zum Tattoo</h3></div><div class="p1"><div class="st up" style="animation-delay:0.20s"><span class="dot">01</span><h4>Anfrage</h4><p>Schick uns deine Idee, Referenzbilder & Wunsch-Körperstelle — ganz unverbindlich über das Formular.</p></div><div class="st up" style="animation-delay:0.32s"><span class="dot">02</span><h4>Beratung</h4><p>Persönliches Gespräch im Atelier oder per Nachricht. Wir klären Motiv, Größe, Platzierung & Preis.</p></div><div class="st up" style="animation-delay:0.44s"><span class="dot">03</span><h4>Design</h4><p>Dein individueller Entwurf entsteht. Anpassungen inklusive, bis es sich zu 100% richtig anfühlt.</p></div><div class="st up" style="animation-delay:0.56s"><span class="dot">04</span><h4>Dein Termin</h4><p>Wir buchen deinen Slot — privat, ungestört, ohne Zeitdruck. Eine kleine Anzahlung sichert den Termin.</p></div><div class="st up" style="animation-delay:0.68s"><span class="dot">05</span><h4>Aftercare</h4><p>Du bekommst eine ausführliche Pflege-Anleitung und wir bleiben für Fragen erreichbar.</p></div></div></div></section>
+
+<section><div class="meta"><span class="num">ABLAUF 02</span><h2 class="name">„Horizontal Stepper"</h2>
+<p class="desc">Schritte nebeneinander, verbunden durch eine Linie, die sich aufzieht — wie ein Fortschrittsbalken. Kompakt &amp; übersichtlich auf Desktop, stapelt sauber auf Mobile.</p>
+<div class="tags"><span class="tag">Horizontal</span><span class="tag">Connector-Line</span><span class="tag">Kompakt</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Von der Idee zum Tattoo</h3></div><div class="p2"><div class="track"><div class="st up" style="animation-delay:0.20s"><div class="n">1</div><h4>Anfrage</h4><p>Schick uns deine Idee, Referenzbilder & Wunsch-Körperstelle — ganz unverbindlich über das Formular.</p></div><div class="st up" style="animation-delay:0.30s"><div class="n">2</div><h4>Beratung</h4><p>Persönliches Gespräch im Atelier oder per Nachricht. Wir klären Motiv, Größe, Platzierung & Preis.</p></div><div class="st up" style="animation-delay:0.40s"><div class="n">3</div><h4>Design</h4><p>Dein individueller Entwurf entsteht. Anpassungen inklusive, bis es sich zu 100% richtig anfühlt.</p></div><div class="st up" style="animation-delay:0.50s"><div class="n">4</div><h4>Dein Termin</h4><p>Wir buchen deinen Slot — privat, ungestört, ohne Zeitdruck. Eine kleine Anzahlung sichert den Termin.</p></div><div class="st up" style="animation-delay:0.60s"><div class="n">5</div><h4>Aftercare</h4><p>Du bekommst eine ausführliche Pflege-Anleitung und wir bleiben für Fragen erreichbar.</p></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">ABLAUF 03</span><h2 class="name">„Zigzag + Bilder"</h2>
+<p class="desc">Jeder Schritt mit Bild, abwechselnd links/rechts versetzt — lebendig &amp; atmosphärisch. Zeigt nebenbei das Atelier. Inhalte gleiten beim Scrollen ein.</p>
+<div class="tags"><span class="tag">Alternierend</span><span class="tag">Mit Bildern</span><span class="tag">Atmosphärisch</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Von der Idee zum Tattoo</h3></div><div class="p3"><div class="st"><div class="im up"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=60" alt=""></div><div class="tx up" style="animation-delay:.1s"><span class="n">01</span><h4>Anfrage</h4><p>Schick uns deine Idee, Referenzbilder & Wunsch-Körperstelle — ganz unverbindlich über das Formular.</p></div></div><div class="st"><div class="im up"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=600&q=60" alt=""></div><div class="tx up" style="animation-delay:.1s"><span class="n">02</span><h4>Beratung</h4><p>Persönliches Gespräch im Atelier oder per Nachricht. Wir klären Motiv, Größe, Platzierung & Preis.</p></div></div><div class="st"><div class="im up"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=60" alt=""></div><div class="tx up" style="animation-delay:.1s"><span class="n">03</span><h4>Design</h4><p>Dein individueller Entwurf entsteht. Anpassungen inklusive, bis es sich zu 100% richtig anfühlt.</p></div></div><div class="st"><div class="im up"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=600&q=60" alt=""></div><div class="tx up" style="animation-delay:.1s"><span class="n">04</span><h4>Dein Termin</h4><p>Wir buchen deinen Slot — privat, ungestört, ohne Zeitdruck. Eine kleine Anzahlung sichert den Termin.</p></div></div><div class="st"><div class="im up"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=600&q=60" alt=""></div><div class="tx up" style="animation-delay:.1s"><span class="n">05</span><h4>Aftercare</h4><p>Du bekommst eine ausführliche Pflege-Anleitung und wir bleiben für Fragen erreichbar.</p></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">ABLAUF 04</span><h2 class="name">„Big Numbers" — Editorial</h2>
+<p class="desc">Große Outline-Ziffern als Blickfang, Text daneben. Reduziert, selbstbewusst, modern. Passt zur typografischen Sprache der Hero/Marquees.</p>
+<div class="tags"><span class="tag">Großziffern</span><span class="tag">Outline</span><span class="tag">Minimal</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Von der Idee zum Tattoo</h3></div><div class="p4"><div class="st up"><span class="n">01</span><div><h4>Anfrage</h4><p>Schick uns deine Idee, Referenzbilder & Wunsch-Körperstelle — ganz unverbindlich über das Formular.</p></div></div><div class="st up"><span class="n">02</span><div><h4>Beratung</h4><p>Persönliches Gespräch im Atelier oder per Nachricht. Wir klären Motiv, Größe, Platzierung & Preis.</p></div></div><div class="st up"><span class="n">03</span><div><h4>Design</h4><p>Dein individueller Entwurf entsteht. Anpassungen inklusive, bis es sich zu 100% richtig anfühlt.</p></div></div><div class="st up"><span class="n">04</span><div><h4>Dein Termin</h4><p>Wir buchen deinen Slot — privat, ungestört, ohne Zeitdruck. Eine kleine Anzahlung sichert den Termin.</p></div></div><div class="st up"><span class="n">05</span><div><h4>Aftercare</h4><p>Du bekommst eine ausführliche Pflege-Anleitung und wir bleiben für Fragen erreichbar.</p></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">ABLAUF 05</span><h2 class="name">„Accordion" — aufklappbar</h2>
+<p class="desc">Kompakte Liste, die sich pro Schritt aufklappt — spart Platz, Besucher öffnet nur, was interessiert. Gut kombinierbar mit FAQ. Klick einen Schritt.</p>
+<div class="tags"><span class="tag">Expandable</span><span class="tag">Platzsparend</span><span class="tag">Interaktiv</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Von der Idee zum Tattoo</h3></div><div class="p5"><details class="ac" open><summary><span class="n">01</span>Anfrage<span class="pl">+</span></summary><div class="bd">Schick uns deine Idee, Referenzbilder & Wunsch-Körperstelle — ganz unverbindlich über das Formular.</div></details><details class="ac" ><summary><span class="n">02</span>Beratung<span class="pl">+</span></summary><div class="bd">Persönliches Gespräch im Atelier oder per Nachricht. Wir klären Motiv, Größe, Platzierung & Preis.</div></details><details class="ac" ><summary><span class="n">03</span>Design<span class="pl">+</span></summary><div class="bd">Dein individueller Entwurf entsteht. Anpassungen inklusive, bis es sich zu 100% richtig anfühlt.</div></details><details class="ac" ><summary><span class="n">04</span>Dein Termin<span class="pl">+</span></summary><div class="bd">Wir buchen deinen Slot — privat, ungestört, ohne Zeitdruck. Eine kleine Anzahlung sichert den Termin.</div></details><details class="ac" ><summary><span class="n">05</span>Aftercare<span class="pl">+</span></summary><div class="bd">Du bekommst eine ausführliche Pflege-Anleitung und wir bleiben für Fragen erreichbar.</div></details></div></div></section>
+
+<div class="foot"><p><b>5 Ablauf-Optionen.</b> Texte = Entwürfe (privates Atelier, Termine n.V., Anzahlung) — wir verfeinern. Sag mir eine Nummer (1–5) oder einen Mix.</p></div>
+</body></html>
