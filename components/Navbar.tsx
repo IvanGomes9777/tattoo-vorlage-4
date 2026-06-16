@@ -1,0 +1,127 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { Logo } from "./Logo";
+
+const LEFT_LINKS = [
+  { label: "Atelier", href: "#atelier" },
+  { label: "Künstler", href: "#kuenstler" },
+  { label: "Werke", href: "#werke" },
+];
+
+const RIGHT_LINKS = [
+  { label: "Ablauf", href: "#ablauf" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Termin", href: "#kontakt", cta: true },
+];
+
+const ALL_LINKS = [...LEFT_LINKS, ...RIGHT_LINKS];
+
+export function Navbar() {
+  const [solid, setSolid] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setSolid(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Lock body scroll when the mobile overlay is open.
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color,padding] duration-500 ${
+        solid
+          ? "bg-[#0d0d0b]/92 backdrop-blur-md border-b border-gold/30 py-2"
+          : "bg-[#0d0d0b]/30 backdrop-blur-md border-b border-gold/20 py-3"
+      }`}
+    >
+      <nav
+        aria-label="Hauptnavigation"
+        className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-[clamp(1rem,3vw,2.2rem)]"
+      >
+        {/* Left links (desktop) */}
+        <ul className="hidden items-center gap-[clamp(.8rem,2vw,1.7rem)] lg:flex">
+          {LEFT_LINKS.map((l) => (
+            <li key={l.href}>
+              <NavLink {...l} />
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile: burger left */}
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? "Menü schließen" : "Menü öffnen"}
+          aria-expanded={open}
+          className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] justify-self-start lg:hidden"
+        >
+          <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "translate-y-[6.5px] rotate-45" : ""}`} />
+          <span className={`h-[1.5px] w-6 bg-cream transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
+          <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`} />
+        </button>
+
+        {/* Centered emblem / logo */}
+        <a href="#top" className="justify-self-center" aria-label="Dog Days Tattoo — Startseite">
+          <Logo size={solid ? 52 : 58} framed priority />
+        </a>
+
+        {/* Right links (desktop) */}
+        <ul className="hidden items-center justify-end gap-[clamp(.8rem,2vw,1.7rem)] lg:flex">
+          {RIGHT_LINKS.map((l) => (
+            <li key={l.href}>
+              <NavLink {...l} />
+            </li>
+          ))}
+        </ul>
+
+        {/* Spacer to balance the grid on mobile (right column) */}
+        <span className="lg:hidden" aria-hidden="true" />
+      </nav>
+
+      {/* Mobile fullscreen overlay */}
+      <div
+        className={`fixed inset-0 -z-10 flex flex-col items-center justify-center gap-5 bg-[#0d0d0b]/97 backdrop-blur-sm transition-opacity duration-500 lg:hidden ${
+          open ? "z-40 opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        {ALL_LINKS.map((l, i) => (
+          <a
+            key={l.href}
+            href={l.href}
+            onClick={() => setOpen(false)}
+            style={{ transitionDelay: open ? `${0.06 + i * 0.06}s` : "0s" }}
+            className={`font-western text-3xl transition-all duration-500 ${
+              "cta" in l && l.cta ? "text-gold" : "text-cream-dim hover:text-gold"
+            } ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
+          >
+            {l.label}
+          </a>
+        ))}
+      </div>
+    </header>
+  );
+}
+
+function NavLink({ label, href, cta }: { label: string; href: string; cta?: boolean }) {
+  return (
+    <a
+      href={href}
+      className={`group relative font-sans text-[.78rem] font-semibold uppercase tracking-[.1em] transition-colors duration-300 ${
+        cta ? "text-gold" : "text-cream-dim hover:text-gold"
+      }`}
+    >
+      {label}
+      <span className="absolute -bottom-0.5 left-0 right-0 h-[1.5px] origin-center scale-x-0 bg-gold transition-transform duration-300 ease-out group-hover:scale-x-100" />
+    </a>
+  );
+}
