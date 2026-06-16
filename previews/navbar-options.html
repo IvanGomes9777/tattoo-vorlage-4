@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — Navbar Optionen (1–5)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0A0A0A; --ink:#111110; --anthra:#161616;
+    --bone:#F5F0E8; --bone-dim:#C9C2B6;
+    --neon:#FF1744; --gold:#C9A86A; --burgundy:#4A1C2A;
+    --line:rgba(245,240,232,.14);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#070707;color:var(--bone);font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  /* ---- Comparison page chrome ---- */
+  .pagehead{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,4rem) 1.25rem 1rem}
+  .kicker{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+  .pagehead h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(1.8rem,1rem+4vw,3.4rem);margin:.4rem 0 .6rem;line-height:1.05}
+  .pagehead p{color:var(--bone-dim);max-width:60ch;font-weight:300;line-height:1.65;font-size:clamp(1rem,.95rem+.3vw,1.1rem)}
+
+  .opt{border-top:1px solid var(--line)}
+  .opt__meta{max-width:1100px;margin:0 auto;padding:clamp(2.2rem,5vw,3.5rem) 1.25rem 1.1rem;display:grid;gap:.5rem}
+  .opt__num{font-family:'Space Mono',monospace;color:var(--gold);font-size:.78rem;letter-spacing:.2em}
+  .opt__name{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,1rem+2.4vw,2.2rem);font-weight:500}
+  .opt__desc{color:var(--bone-dim);font-weight:300;max-width:70ch;line-height:1.6}
+  .opt__tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+  .tag{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);padding:.35rem .6rem;border-radius:999px;color:var(--bone-dim)}
+
+  /* the demo stage – each navbar sits over a hero backdrop snippet */
+  .stage{position:relative;height:clamp(360px,52vh,520px);overflow:hidden;border:1px solid var(--line);margin:0 1.25rem;border-radius:14px}
+  .stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,7,.2) 0%,rgba(7,7,7,.55) 60%,#070707 100%);pointer-events:none}
+  .stage__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.25) contrast(1.05);transform:scale(1.06);animation:kb 18s ease-in-out infinite alternate}
+  @keyframes kb{to{transform:scale(1.16) translateY(-2%)}}
+  .stage__hint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:5;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.2em;color:var(--bone-dim);text-transform:uppercase;opacity:.7}
+
+  @media (prefers-reduced-motion: reduce){.stage__bg{animation:none}}
+
+  /* ============ NAV 1 — HUNDSTAGE NOIR (editorial / premium) ============ */
+  .n1{position:absolute;inset:0 0 auto 0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.4rem clamp(1rem,3vw,2.4rem);transition:.5s}
+  .n1.solid{background:rgba(10,10,10,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:.9rem;padding-bottom:.9rem}
+  .n1__logo{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.04em}
+  .n1__logo b{font-weight:600}
+  .n1__nav{display:flex;gap:clamp(1rem,2.4vw,2.2rem);align-items:center}
+  .n1__nav a{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim);position:relative;padding:.3rem 0}
+  .n1__nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .4s cubic-bezier(.2,.8,.2,1)}
+  .n1__nav a:hover{color:var(--bone)}
+  .n1__nav a:hover::after{width:100%}
+  .n1__cta{border:1px solid var(--gold);color:var(--gold);padding:.6rem 1.2rem;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;border-radius:2px;transition:.35s;overflow:hidden;position:relative}
+  .n1__cta:hover{color:#0A0A0A;background:var(--gold)}
+
+  /* ============ NAV 2 — NEON INK (edgy / glow) ============ */
+  .n2{position:absolute;inset:0 0 auto 0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.1rem clamp(1rem,3vw,2.4rem);transition:.5s}
+  .n2.solid{background:rgba(8,8,8,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,23,68,.3)}
+  .n2__logo{font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.02em;text-transform:uppercase;display:flex;align-items:center;gap:.55rem;line-height:1}
+  .n2__star{color:var(--neon);filter:drop-shadow(0 0 8px rgba(255,23,68,.8));font-size:1.1rem}
+  .n2__nav{display:flex;gap:clamp(.9rem,2.2vw,2rem);align-items:center}
+  .n2__nav a{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.12em;color:var(--bone);transition:.3s}
+  .n2__nav a:hover{color:var(--neon);text-shadow:0 0 12px rgba(255,23,68,.7)}
+  .n2__cta{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.14em;padding:.45rem 1.3rem;border:1.5px solid var(--neon);color:var(--neon);border-radius:3px;position:relative;transition:.35s;box-shadow:0 0 0 rgba(255,23,68,0)}
+  .n2__cta:hover{background:var(--neon);color:#080808;box-shadow:0 0 22px rgba(255,23,68,.6)}
+  .n2__cta.pulse{animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 rgba(255,23,68,0)}50%{box-shadow:0 0 16px rgba(255,23,68,.45)}}
+
+  /* ============ NAV 3 — QUIET LINE (minimal + fullscreen overlay) ============ */
+  .n3{position:absolute;inset:0 0 auto 0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.5rem clamp(1rem,3vw,2.4rem)}
+  .n3__logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;letter-spacing:.02em}
+  .n3__burger{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .n3__burger span{width:26px;height:1.5px;background:var(--bone);transition:.4s}
+  .n3.open .n3__burger span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .n3.open .n3__burger span:nth-child(2){opacity:0}
+  .n3.open .n3__burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  .n3__overlay{position:absolute;inset:0;z-index:9;background:rgba(8,8,8,.96);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;opacity:0;pointer-events:none;transition:.5s}
+  .n3.open .n3__overlay{opacity:1;pointer-events:auto}
+  .n3__overlay a{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.6rem);color:var(--bone-dim);transition:.4s;transform:translateY(12px);opacity:0}
+  .n3.open .n3__overlay a{transform:translateY(0);opacity:1}
+  .n3.open .n3__overlay a:nth-child(1){transition-delay:.08s}
+  .n3.open .n3__overlay a:nth-child(2){transition-delay:.14s}
+  .n3.open .n3__overlay a:nth-child(3){transition-delay:.2s}
+  .n3.open .n3__overlay a:nth-child(4){transition-delay:.26s}
+  .n3.open .n3__overlay a:nth-child(5){transition-delay:.32s}
+  .n3__overlay a:hover{color:var(--bone);font-style:italic}
+
+  /* ============ NAV 4 — SPLIT BRUTALIST (gallery / index) ============ */
+  .n4{position:absolute;inset:0 0 auto 0;z-index:10;display:grid;grid-template-columns:auto 1fr;align-items:stretch;background:rgba(10,10,10,.55);backdrop-filter:blur(6px);border-bottom:1px solid var(--bone)}
+  .n4__logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-.01em;text-transform:uppercase;padding:1.1rem clamp(1rem,2.5vw,1.8rem);border-right:1px solid var(--bone);display:flex;align-items:center}
+  .n4__nav{display:flex}
+  .n4__nav a{flex:1;display:flex;align-items:center;gap:.5rem;padding:1.1rem clamp(.7rem,1.6vw,1.2rem);font-family:'Space Mono',monospace;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;border-right:1px solid var(--line);transition:.25s;white-space:nowrap}
+  .n4__nav a:last-child{border-right:0}
+  .n4__nav a i{color:var(--gold);font-style:normal;font-size:.62rem;opacity:.8}
+  .n4__nav a:hover{background:var(--bone);color:#0A0A0A}
+  .n4__nav a:hover i{color:#0A0A0A}
+  .n4__nav a.cta{background:var(--neon);color:#080808;font-weight:700}
+  .n4__nav a.cta:hover{background:var(--bone)}
+  @media (max-width:760px){.n4{grid-template-columns:1fr}.n4__nav{display:none}}
+
+  /* ============ NAV 5 — FLOATING GLASS PILL ============ */
+  .n5{position:absolute;left:50%;top:18px;transform:translateX(-50%);z-index:10;width:min(94%,860px);display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem .7rem .6rem 1.2rem;background:rgba(20,18,17,.55);backdrop-filter:blur(16px) saturate(1.2);border:1px solid var(--line);border-radius:999px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+  .n5__logo{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.01em;display:flex;align-items:center;gap:.5rem}
+  .n5__dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+  .n5__nav{position:relative;display:flex;gap:.2rem}
+  .n5__nav a{font-size:.8rem;letter-spacing:.04em;color:var(--bone-dim);padding:.5rem .85rem;border-radius:999px;position:relative;z-index:2;transition:color .3s}
+  .n5__nav a:hover,.n5__nav a.active{color:#0A0A0A}
+  .n5__pill{position:absolute;top:0;left:0;height:100%;background:var(--bone);border-radius:999px;z-index:1;transition:.45s cubic-bezier(.2,.8,.2,1);opacity:0}
+  .n5__cta{background:var(--bone);color:#0A0A0A;font-size:.78rem;font-weight:600;padding:.55rem 1.1rem;border-radius:999px;transition:.3s}
+  .n5__cta:hover{background:var(--gold)}
+  @media (max-width:680px){.n5__nav{display:none}}
+
+  .footnote{max-width:1100px;margin:0 auto;padding:3rem 1.25rem 5rem;color:var(--bone-dim);font-weight:300;border-top:1px solid var(--line)}
+  .footnote b{color:var(--bone);font-weight:500}
+</style>
+</head>
+<body>
+
+  <header class="pagehead">
+    <span class="kicker">Dog Days Tattoo · Münster · Design-Phase 01</span>
+    <h1>Navbar / Header — 5 Optionen</h1>
+    <p>Fünf radikal unterschiedliche Richtungen, jede mit eigenem Animations-Konzept. Scrolle durch die Bühnen — die Navbars reagieren auf Scroll (transparent → solid), Hover-Links, magnetische CTAs und Overlay-Menüs sind live. Sag mir die Nummer, die dich packt (oder ein Mix).</p>
+  </header>
+
+  <!-- ============ OPTION 1 ============ -->
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 01</span>
+      <h2 class="opt__name">„Hundstage Noir" — Editorial Atelier</h2>
+      <p class="opt__desc">Serif-Wortmarke zentriert ruhig, knochenweißer Text auf Schwarz, dünne Gold-Hairline. Premium & diskret — spiegelt „privates Atelier, Termine nach Vereinbarung". Beim Scrollen wird die Bar solide mit Blur.</p>
+      <div class="opt__tags"><span class="tag">Playfair Display</span><span class="tag">Gold #C9A86A</span><span class="tag">Underline-Draw Hover</span><span class="tag">Scroll → Solid</span></div>
+    </div>
+    <div class="stage" data-nav="n1">
+      <img class="stage__bg" alt="Blackwork Tattoo Atelier" loading="lazy" src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=1600&q=70">
+      <nav class="n1">
+        <div class="n1__logo">Dog Days <b>Tattoo</b></div>
+        <div class="n1__nav">
+          <a href="#">Atelier</a><a href="#">Künstler</a><a href="#">Werke</a><a href="#">Ablauf</a><a href="#">Kontakt</a>
+          <a href="#" class="n1__cta">Termin anfragen</a>
+        </div>
+      </nav>
+      <span class="stage__hint">↕ in dieser Box scrollen für Solid-Effekt</span>
+    </div>
+  </section>
+
+  <!-- ============ OPTION 2 ============ -->
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 02</span>
+      <h2 class="opt__name">„Neon Ink" — Dark &amp; Edgy</h2>
+      <p class="opt__desc">Kraftvolle Anton/Bebas-Typo, Hundsstern-Symbol in Neon-Rot mit Glow. Links leuchten bei Hover auf, CTA pulst subtil und füllt sich beim Hover. Roh, laut, unverkennbar Tattoo-Kultur.</p>
+      <div class="opt__tags"><span class="tag">Anton + Bebas Neue</span><span class="tag">Neon #FF1744</span><span class="tag">Glow Hover</span><span class="tag">Pulse CTA</span></div>
+    </div>
+    <div class="stage" data-nav="n2">
+      <img class="stage__bg" alt="Tattoo Arm Blackwork" loading="lazy" src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1600&q=70">
+      <nav class="n2">
+        <div class="n2__logo"><span class="n2__star">✦</span>Dog Days</div>
+        <div class="n2__nav">
+          <a href="#">Crew</a><a href="#">Portfolio</a><a href="#">Stile</a><a href="#">FAQ</a>
+          <a href="#" class="n2__cta pulse">Termin</a>
+        </div>
+      </nav>
+      <span class="stage__hint">↕ in dieser Box scrollen für Solid-Effekt</span>
+    </div>
+  </section>
+
+  <!-- ============ OPTION 3 ============ -->
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 03</span>
+      <h2 class="opt__name">„Quiet Line" — Minimal + Fullscreen-Menü</h2>
+      <p class="opt__desc">Maximale Ruhe: nur kursive Wortmarke + Burger. Klick öffnet ein Fullscreen-Overlay, in dem die Links gestaffelt einschweben. Extrem clean, edel, lässt die Tattoo-Bilder sprechen. <b>Klick den Burger →</b></p>
+      <div class="opt__tags"><span class="tag">Cormorant Garamond</span><span class="tag">Whitespace</span><span class="tag">Staggered Reveal</span><span class="tag">Overlay-Menü</span></div>
+    </div>
+    <div class="stage" data-nav="n3">
+      <img class="stage__bg" alt="Fine line Tattoo" loading="lazy" src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=1600&q=70">
+      <nav class="n3" id="n3">
+        <div class="n3__logo">dog days</div>
+        <button class="n3__burger" id="n3btn" aria-label="Menü"><span></span><span></span><span></span></button>
+        <div class="n3__overlay">
+          <a href="#">Atelier</a><a href="#">Künstler</a><a href="#">Werke</a><a href="#">Ablauf</a><a href="#">Termin anfragen</a>
+        </div>
+      </nav>
+      <span class="stage__hint">↑ Burger klicken zum Öffnen</span>
+    </div>
+  </section>
+
+  <!-- ============ OPTION 4 ============ -->
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 04</span>
+      <h2 class="opt__name">„Split Brutalist" — Galerie-Index</h2>
+      <p class="opt__desc">Asymmetrisches Raster mit harten Linien, Monospace-Labels und Index-Nummern wie in einem Ausstellungskatalog. Hover invertiert die Zelle (schwarz↔weiß). Kunstgalerie-Attitüde, sehr „Atelier".</p>
+      <div class="opt__tags"><span class="tag">Syne + Space Mono</span><span class="tag">Hard Grid</span><span class="tag">Invert Hover</span><span class="tag">Index 01–05</span></div>
+    </div>
+    <div class="stage" data-nav="n4">
+      <img class="stage__bg" alt="Tattoo studio interior" loading="lazy" src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1600&q=70">
+      <nav class="n4">
+        <div class="n4__logo">Dog&nbsp;Days</div>
+        <div class="n4__nav">
+          <a href="#"><i>01</i> Atelier</a>
+          <a href="#"><i>02</i> Künstler</a>
+          <a href="#"><i>03</i> Werke</a>
+          <a href="#"><i>04</i> Ablauf</a>
+          <a href="#" class="cta"><i>05</i> Termin</a>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============ OPTION 5 ============ -->
+  <section class="opt">
+    <div class="opt__meta">
+      <span class="opt__num">OPTION 05</span>
+      <h2 class="opt__name">„Floating Glass" — Schwebende Pille</h2>
+      <p class="opt__desc">Abgesetzte, schwebende Glas-Bar mit Backdrop-Blur. Ein animiertes weißes Pill gleitet unter den aktiven/gehoverten Link. Modern, soft, top auf Mobile. Gold-Punkt als Marken-Akzent. <b>Über die Links fahren →</b></p>
+      <div class="opt__tags"><span class="tag">Syne</span><span class="tag">Glassmorphism</span><span class="tag">Sliding Pill</span><span class="tag">Mobile-First</span></div>
+    </div>
+    <div class="stage" data-nav="n5">
+      <img class="stage__bg" alt="Tattoo close up" loading="lazy" src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1600&q=70">
+      <nav class="n5">
+        <div class="n5__logo"><span class="n5__dot"></span>Dog Days</div>
+        <div class="n5__nav" id="n5nav">
+          <span class="n5__pill" id="n5pill"></span>
+          <a href="#" class="active">Atelier</a><a href="#">Künstler</a><a href="#">Werke</a><a href="#">Ablauf</a>
+        </div>
+        <a href="#" class="n5__cta">Termin anfragen</a>
+      </nav>
+    </div>
+  </section>
+
+  <div class="footnote">
+    <p><b>Animations-Konzept inklusive</b> — jede Option hat Scroll-Reveal-Anmutung (GSAP/Framer-Motion-Stil) + Micro-Interactions. Im finalen Next.js-Build kommen pro Sektion gestaffelte Reveals, bouncy Buttons und sanfte Bild-Reveals dazu.<br><br>
+    Bilder sind Platzhalter von Unsplash (legal, thematisch passend) — werden später gegen echte Dog-Days-Werke ausgetauscht.</p>
+  </div>
+
+<script>
+  // Scroll → solid (per stage, simulated via IntersectionObserver on scroll within page)
+  const solidNavs = document.querySelectorAll('.n1, .n2');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      const nav = e.target.querySelector('.n1, .n2');
+      if(!nav) return;
+      if(e.intersectionRatio < .9) nav.classList.add('solid'); else nav.classList.remove('solid');
+    });
+  },{threshold:[.9]});
+  document.querySelectorAll('.stage').forEach(s=>io.observe(s));
+
+  // Nav 3 overlay toggle
+  const n3 = document.getElementById('n3');
+  document.getElementById('n3btn').addEventListener('click',()=>n3.classList.toggle('open'));
+  n3.querySelectorAll('.n3__overlay a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();n3.classList.remove('open')}));
+
+  // Nav 5 sliding pill
+  const nav5 = document.getElementById('n5nav');
+  const pill = document.getElementById('n5pill');
+  const links5 = nav5.querySelectorAll('a');
+  function movePill(el){
+    pill.style.opacity = 1;
+    pill.style.width = el.offsetWidth+'px';
+    pill.style.left = el.offsetLeft+'px';
+  }
+  links5.forEach(a=>{
+    a.addEventListener('mouseenter',()=>movePill(a));
+    a.addEventListener('click',e=>{e.preventDefault();links5.forEach(x=>x.classList.remove('active'));a.classList.add('active');movePill(a)});
+  });
+  nav5.addEventListener('mouseleave',()=>{const act=nav5.querySelector('.active');act?movePill(act):pill.style.opacity=0});
+  window.addEventListener('load',()=>{const act=nav5.querySelector('.active');if(act)movePill(act)});
+  // prevent dead links from jumping
+  document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+</script>
+</body>
+</html>

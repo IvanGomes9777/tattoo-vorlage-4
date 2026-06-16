@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.local
+MAGIC-TEMPLATE.md
+API_KEY*
+.next/
+.vercel
