@@ -1,0 +1,160 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — Kontakt Optionen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#0d0d0b;color:#F4EEDF;font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.head{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) 1.25rem 1rem}
+.kick{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#E0A53C}
+.head h1{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.7rem,1rem+4vw,3rem);margin:.5rem 0 .5rem}
+.head p{color:#B6AD95;max-width:64ch;font-weight:300;line-height:1.65}
+.meta{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3rem) 1.25rem .9rem;display:grid;gap:.5rem;border-top:1px solid rgba(244,238,223,.12)}
+.num{font-family:'Space Mono',monospace;color:#E0A53C;font-size:.78rem;letter-spacing:.2em}
+.name{font-family:'Alfa Slab One',serif;font-size:clamp(1.3rem,1rem+2.2vw,2rem)}
+.desc{color:#B6AD95;font-weight:300;max-width:72ch;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+.tag{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(244,238,223,.2);padding:.35rem .6rem;border-radius:999px;color:#B6AD95}
+.stage{position:relative;margin:0 1.25rem;border:1px solid rgba(244,238,223,.14);border-radius:14px;overflow:hidden}
+h3.t{font-family:'Alfa Slab One',serif;font-weight:400;line-height:1.06}
+/* form bits */
+.field{margin-bottom:.7rem}
+.field label{display:block;font-family:'Space Mono';font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#B6AD95;margin-bottom:.3rem}
+.field input,.field textarea,.field select{width:100%;background:#0d0d0b;border:1px solid rgba(244,238,223,.2);border-radius:6px;color:#F4EEDF;padding:.7rem .8rem;font-family:inherit;font-size:.9rem}
+.field input:focus,.field textarea:focus{outline:none;border-color:#E0A53C}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.hp{position:absolute;left:-9999px}
+.consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.78rem;color:#B6AD95;margin:.6rem 0 1rem}
+.consent input{margin-top:.2rem}
+.consent a{color:#E0A53C;text-decoration:underline}
+.btn{display:inline-block;border:1px solid #E0A53C;background:#E0A53C;color:#141414;padding:.85rem 1.9rem;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:.3s;width:100%}
+.btn:hover{background:transparent;color:#E0A53C}
+.info .ln{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.9rem;color:#C9C2B6;font-weight:300}
+.info .ln b{color:#F4EEDF;font-weight:600;display:block;font-family:'Space Mono';font-size:.62rem;letter-spacing:.12em;text-transform:uppercase}
+.info .ic{color:#E0A53C}
+.map{border:0;width:100%;height:100%;min-height:240px;filter:grayscale(.4) contrast(1.1)}
+.secnote{font-family:'Space Mono';font-size:.6rem;color:#7E8262;margin-top:.6rem}
+
+/* C1 split */
+.c1{display:grid;grid-template-columns:1fr 1fr}
+.c1 .form{padding:clamp(1.6rem,4vw,2.6rem)}
+.c1 .side{background:#121210;padding:clamp(1.6rem,4vw,2.6rem);display:flex;flex-direction:column}
+.c1 .mapwrap{flex:1;border-radius:8px;overflow:hidden;margin-top:1rem;min-height:200px}
+@media(max-width:760px){.c1{grid-template-columns:1fr}}
+
+/* C2 map bg + floating card */
+.c2{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;padding:2rem}
+.c2 .mapbg{position:absolute;inset:0}
+.c2 .mapbg iframe{width:100%;height:100%}
+.c2 .veil{position:absolute;inset:0;background:rgba(13,13,11,.65)}
+.c2 .card{position:relative;z-index:2;background:#0d0d0b;border:1px solid rgba(224,165,60,.4);border-radius:14px;padding:clamp(1.6rem,4vw,2.4rem);max-width:460px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+
+/* C3 centered */
+.c3{padding:clamp(1.8rem,5vw,3.5rem)}
+.c3 .inforow{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-bottom:1.8rem;text-align:center}
+.c3 .inforow .ln{flex-direction:column;align-items:center;gap:.3rem;margin:0}
+.c3 form{max-width:560px;margin:0 auto}
+
+/* C4 statement + form */
+.c4{display:grid;grid-template-columns:1fr 1.1fr;gap:0}
+.c4 .left{background:#9DA17E;color:#141414;padding:clamp(1.6rem,4vw,3rem);display:flex;flex-direction:column;justify-content:center}
+.c4 .left h3{font-size:clamp(1.8rem,1rem+3vw,3rem);margin:.6rem 0}
+.c4 .left .ln{color:#2c2c22}.c4 .left .ic{color:#141414}.c4 .left .ln b{color:#141414}
+.c4 .form{padding:clamp(1.6rem,4vw,2.6rem)}
+@media(max-width:760px){.c4{grid-template-columns:1fr}}
+
+/* C5 map top */
+.c5 .maptop{height:260px}
+.c5 .body{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(1.5rem,4vw,3rem);padding:clamp(1.6rem,4vw,2.6rem)}
+@media(max-width:760px){.c5 .body{grid-template-columns:1fr}}
+.foot{max-width:1100px;margin:0 auto;padding:2.5rem 1.25rem 4rem;color:#B6AD95;font-weight:300;border-top:1px solid rgba(244,238,223,.12)}
+.foot b{color:#F4EEDF;font-weight:600}
+</style></head><body>
+<header class="head"><span class="kick">Dog Days Tattoo · Münster · Design-Phase 07 · Kontakt</span>
+<h1>„Kontakt" — 5 Optionen</h1><p>Adresse, Karte, Instagram &amp; ein DSGVO-/Security-konformes Anfrage-Formular (CSRF, Honeypot, Einwilligung). Karte ist echt eingebettet. 5 Layouts.</p></header>
+
+<section><div class="meta"><span class="num">KONTAKT 01</span><h2 class="name">„Split" — Formular + Info/Karte</h2>
+<p class="desc">Links das Formular, rechts Kontaktdaten &amp; eingebettete Google-Karte. Klassisch, übersichtlich, alles auf einen Blick.</p>
+<div class="tags"><span class="tag">2-Spalten</span><span class="tag">Maps-Embed</span><span class="tag">Klassisch</span></div></div>
+<div class="stage"><div class="c1"><div class="form"><h3 class="t" style="font-size:1.6rem;margin:0 0 1.2rem">Anfrage senden</h3>
+<div class="two"><div class="field"><label>Name</label><input type="text" placeholder="Dein Name"></div><div class="field"><label>Telefon</label><input type="tel" placeholder="Optional"></div></div>
+<div class="field"><label>E-Mail</label><input type="email" placeholder="du@example.de"></div>
+<div class="two"><div class="field"><label>Wunsch-Stil</label><input type="text" placeholder="z.B. Fine-Line, Blackwork"></div><div class="field"><label>Körperstelle</label><input type="text" placeholder="z.B. Unterarm"></div></div>
+<div class="field"><label>Deine Idee</label><textarea rows="3" placeholder="Beschreib dein Wunsch-Tattoo, Größe, Referenzen…"></textarea></div>
+<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="consent"><input type="checkbox"> Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Anfrage zu.</label>
+<button class="btn" type="button">Anfrage senden</button>
+<div class="secnote">🔒 Gesichert: CSRF-Token · Honeypot · Spam-Schutz · keine Weitergabe an Dritte</div></div>
+<div class="side"><span class="kick">So erreichst du uns</span><div class="info" style="margin-top:1rem">
+<div class="ln"><span class="ic">📍</span><div><b>Adresse</b>Weseler Str. 47, 48151 Münster</div></div>
+<div class="ln"><span class="ic">✦</span><div><b>Termine</b>Nach Vereinbarung · Privates Atelier</div></div>
+<div class="ln"><span class="ic">◐</span><div><b>Instagram</b>@dogdays_tattoo</div></div></div><div class="mapwrap"><iframe class="map" src="https://www.google.com/maps?q=Weseler%20Str.%2047,%2048151%20M%C3%BCnster&output=embed" loading="lazy"></iframe></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">KONTAKT 02</span><h2 class="name">„Map Background" — Floating Card</h2>
+<p class="desc">Die Karte füllt den Hintergrund, das Formular schwebt als Karte darüber. Atmosphärisch &amp; modern, betont den Standort Münster.</p>
+<div class="tags"><span class="tag">Vollflächige Karte</span><span class="tag">Floating Form</span><span class="tag">Modern</span></div></div>
+<div class="stage"><div class="c2"><div class="mapbg"><iframe class="map" src="https://www.google.com/maps?q=Weseler%20Str.%2047,%2048151%20M%C3%BCnster&output=embed" loading="lazy"></iframe></div><div class="veil"></div>
+<div class="card"><h3 class="t" style="font-size:1.5rem;margin:0 0 .3rem">Termin anfragen</h3><p style="color:#B6AD95;font-weight:300;font-size:.85rem;margin:0 0 1rem">Weseler Str. 47 · nach Vereinbarung</p>
+<div class="two"><div class="field"><label>Name</label><input type="text" placeholder="Dein Name"></div><div class="field"><label>Telefon</label><input type="tel" placeholder="Optional"></div></div>
+<div class="field"><label>E-Mail</label><input type="email" placeholder="du@example.de"></div>
+<div class="two"><div class="field"><label>Wunsch-Stil</label><input type="text" placeholder="z.B. Fine-Line, Blackwork"></div><div class="field"><label>Körperstelle</label><input type="text" placeholder="z.B. Unterarm"></div></div>
+<div class="field"><label>Deine Idee</label><textarea rows="3" placeholder="Beschreib dein Wunsch-Tattoo, Größe, Referenzen…"></textarea></div>
+<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="consent"><input type="checkbox"> Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Anfrage zu.</label>
+<button class="btn" type="button">Anfrage senden</button>
+<div class="secnote">🔒 Gesichert: CSRF-Token · Honeypot · Spam-Schutz · keine Weitergabe an Dritte</div></div></div></div></section>
+
+<section><div class="meta"><span class="num">KONTAKT 03</span><h2 class="name">„Centered" — Minimal</h2>
+<p class="desc">Kontaktdaten als zentrierte Zeile, darunter ein ruhiges, fokussiertes Formular. Sehr clean — nichts lenkt von der Anfrage ab.</p>
+<div class="tags"><span class="tag">Zentriert</span><span class="tag">Fokussiert</span><span class="tag">Clean</span></div></div>
+<div class="stage"><div class="c3"><div style="text-align:center"><span class="kick">Lass uns reden</span><h3 class="t" style="font-size:1.8rem;margin:.4rem 0 1.4rem">Dein Tattoo beginnt hier</h3></div>
+<div class="inforow">
+<div class="ln"><span class="ic">📍</span><div><b>Adresse</b>Weseler Str. 47, 48151 Münster</div></div>
+<div class="ln"><span class="ic">✦</span><div><b>Termine</b>Nach Vereinbarung · Privates Atelier</div></div>
+<div class="ln"><span class="ic">◐</span><div><b>Instagram</b>@dogdays_tattoo</div></div></div><form>
+<div class="two"><div class="field"><label>Name</label><input type="text" placeholder="Dein Name"></div><div class="field"><label>Telefon</label><input type="tel" placeholder="Optional"></div></div>
+<div class="field"><label>E-Mail</label><input type="email" placeholder="du@example.de"></div>
+<div class="two"><div class="field"><label>Wunsch-Stil</label><input type="text" placeholder="z.B. Fine-Line, Blackwork"></div><div class="field"><label>Körperstelle</label><input type="text" placeholder="z.B. Unterarm"></div></div>
+<div class="field"><label>Deine Idee</label><textarea rows="3" placeholder="Beschreib dein Wunsch-Tattoo, Größe, Referenzen…"></textarea></div>
+<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="consent"><input type="checkbox"> Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Anfrage zu.</label>
+<button class="btn" type="button">Anfrage senden</button>
+<div class="secnote">🔒 Gesichert: CSRF-Token · Honeypot · Spam-Schutz · keine Weitergabe an Dritte</div></form></div></div></section>
+
+<section><div class="meta"><span class="num">KONTAKT 04</span><h2 class="name">„Statement + Formular"</h2>
+<p class="desc">Links ein olivgrünes Statement-Feld mit Kontaktdaten (Markenfarbe), rechts das Formular. Markig &amp; einladend, starker Marken-Auftritt.</p>
+<div class="tags"><span class="tag">Olive Panel</span><span class="tag">Statement</span><span class="tag">Markig</span></div></div>
+<div class="stage"><div class="c4"><div class="left"><span class="kick" style="color:#3a3a30">Lass uns reden</span><h3 class="t">Erzähl uns<br>deine Idee.</h3><div class="info" style="margin-top:1rem">
+<div class="ln"><span class="ic">📍</span><div><b>Adresse</b>Weseler Str. 47, 48151 Münster</div></div>
+<div class="ln"><span class="ic">✦</span><div><b>Termine</b>Nach Vereinbarung · Privates Atelier</div></div>
+<div class="ln"><span class="ic">◐</span><div><b>Instagram</b>@dogdays_tattoo</div></div></div></div>
+<div class="form">
+<div class="two"><div class="field"><label>Name</label><input type="text" placeholder="Dein Name"></div><div class="field"><label>Telefon</label><input type="tel" placeholder="Optional"></div></div>
+<div class="field"><label>E-Mail</label><input type="email" placeholder="du@example.de"></div>
+<div class="two"><div class="field"><label>Wunsch-Stil</label><input type="text" placeholder="z.B. Fine-Line, Blackwork"></div><div class="field"><label>Körperstelle</label><input type="text" placeholder="z.B. Unterarm"></div></div>
+<div class="field"><label>Deine Idee</label><textarea rows="3" placeholder="Beschreib dein Wunsch-Tattoo, Größe, Referenzen…"></textarea></div>
+<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="consent"><input type="checkbox"> Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Anfrage zu.</label>
+<button class="btn" type="button">Anfrage senden</button>
+<div class="secnote">🔒 Gesichert: CSRF-Token · Honeypot · Spam-Schutz · keine Weitergabe an Dritte</div></div></div></div></section>
+
+<section><div class="meta"><span class="num">KONTAKT 05</span><h2 class="name">„Map Top" — Karte oben</h2>
+<p class="desc">Breite Karte oben als Anker, darunter Kontaktdaten &amp; Formular nebeneinander. Gut, wenn der Standort wichtig ist und du Laufkundschaft (Termine) leiten willst.</p>
+<div class="tags"><span class="tag">Map-Banner</span><span class="tag">Info + Form</span><span class="tag">Standort-Fokus</span></div></div>
+<div class="stage"><div class="c5"><div class="maptop"><iframe class="map" src="https://www.google.com/maps?q=Weseler%20Str.%2047,%2048151%20M%C3%BCnster&output=embed" loading="lazy"></iframe></div>
+<div class="body"><div><span class="kick">So erreichst du uns</span><div class="info" style="margin-top:1rem">
+<div class="ln"><span class="ic">📍</span><div><b>Adresse</b>Weseler Str. 47, 48151 Münster</div></div>
+<div class="ln"><span class="ic">✦</span><div><b>Termine</b>Nach Vereinbarung · Privates Atelier</div></div>
+<div class="ln"><span class="ic">◐</span><div><b>Instagram</b>@dogdays_tattoo</div></div></div></div><div><h3 class="t" style="font-size:1.4rem;margin:0 0 1rem">Anfrage senden</h3>
+<div class="two"><div class="field"><label>Name</label><input type="text" placeholder="Dein Name"></div><div class="field"><label>Telefon</label><input type="tel" placeholder="Optional"></div></div>
+<div class="field"><label>E-Mail</label><input type="email" placeholder="du@example.de"></div>
+<div class="two"><div class="field"><label>Wunsch-Stil</label><input type="text" placeholder="z.B. Fine-Line, Blackwork"></div><div class="field"><label>Körperstelle</label><input type="text" placeholder="z.B. Unterarm"></div></div>
+<div class="field"><label>Deine Idee</label><textarea rows="3" placeholder="Beschreib dein Wunsch-Tattoo, Größe, Referenzen…"></textarea></div>
+<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="consent"><input type="checkbox"> Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Anfrage zu.</label>
+<button class="btn" type="button">Anfrage senden</button>
+<div class="secnote">🔒 Gesichert: CSRF-Token · Honeypot · Spam-Schutz · keine Weitergabe an Dritte</div></div></div></div></div></section>
+
+<div class="foot"><p><b>5 Kontakt-Optionen.</b> Im finalen Build: Formular mit Server Action, CSRF-Token, Honeypot, Rate-Limit &amp; Einwilligung (DSGVO). Maps-Embed kommt erst nach Cookie-Consent. Sag mir eine Nummer (1–5) oder einen Mix.</p></div>
+</body></html>
