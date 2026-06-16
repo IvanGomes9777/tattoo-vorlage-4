@@ -1,0 +1,144 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — Werke Slider-Optionen (16–20)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#0d0d0b;color:#F4EEDF;font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.head{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) 1.25rem 1rem}
+.kick{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#E0A53C}
+.head h1{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.7rem,1rem+4vw,3rem);margin:.5rem 0 .5rem}
+.head p{color:#B6AD95;max-width:64ch;font-weight:300;line-height:1.65}
+.meta{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3rem) 1.25rem .9rem;display:grid;gap:.5rem;border-top:1px solid rgba(244,238,223,.12)}
+.num{font-family:'Space Mono',monospace;color:#E0A53C;font-size:.78rem;letter-spacing:.2em}
+.name{font-family:'Alfa Slab One',serif;font-size:clamp(1.3rem,1rem+2.2vw,2rem)}
+.desc{color:#B6AD95;font-weight:300;max-width:72ch;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+.tag{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(244,238,223,.2);padding:.35rem .6rem;border-radius:999px;color:#B6AD95}
+.stage{position:relative;margin:0 1.25rem;border:1px solid rgba(244,238,223,.14);border-radius:14px;overflow:hidden;padding:clamp(1.4rem,3vw,2.2rem)}
+.gtitle{text-align:center;margin-bottom:1.2rem}
+.gtitle h3{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.5rem,1rem+2.4vw,2.2rem);margin:.3rem 0}
+.nav{display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:1.1rem}
+.nav button{background:transparent;border:1px solid #E0A53C;color:#E0A53C;width:46px;height:46px;border-radius:999px;cursor:pointer;font-size:1.2rem;transition:.25s}
+.nav button:hover{background:#E0A53C;color:#141414}
+.scap{text-align:center;margin-top:.8rem;font-family:'Space Mono';font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#B6AD95}
+.scap b{color:#E0A53C;font-weight:400}
+
+/* G16 filmstrip + stage */
+.fs .big{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/10}
+.fs .big img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.fs .big .info{position:absolute;left:0;bottom:0;padding:1rem 1.2rem;background:linear-gradient(transparent,rgba(13,13,11,.92))}
+.fs .big .info .s{font-family:'Space Mono';font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#E0A53C}
+.fs .strip{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:4px;scrollbar-width:thin}
+.fs .strip img{height:74px;aspect-ratio:1;object-fit:cover;border-radius:5px;cursor:pointer;flex:0 0 auto;opacity:.55;border:2px solid transparent;transition:.25s}
+.fs .strip img:hover,.fs .strip img.on{opacity:1;border-color:#E0A53C}
+
+/* G17 hover-pause marquee */
+.hp .row{overflow:hidden}
+.hp .track{display:flex;gap:12px;width:max-content;animation:mar 28s linear infinite}
+.hp .row:hover .track{animation-play-state:paused}
+.hp .it{position:relative;height:200px;aspect-ratio:3/4;border-radius:8px;overflow:hidden;flex:0 0 auto;transition:.4s}
+.hp .it img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3);transition:.4s}
+.hp .it:hover{transform:scale(1.12);z-index:5}
+.hp .it:hover img{filter:grayscale(0)}
+@keyframes mar{to{transform:translateX(-50%)}}
+
+/* G18 tilt 3d */
+.tilt .rowt{display:flex;gap:16px;overflow-x:auto;padding:2rem .5rem;scrollbar-width:none;perspective:1000px}
+.tilt .rowt::-webkit-scrollbar{display:none}
+.tilt .ct{flex:0 0 auto;width:clamp(200px,28vw,280px);aspect-ratio:3/4;border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45);transition:transform .15s ease;transform-style:preserve-3d}
+.tilt .ct img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+
+/* G19 reels */
+.reels{position:relative;max-width:300px;margin:0 auto;aspect-ratio:9/16;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.reels .ri{position:absolute;inset:0;opacity:0;transition:opacity .4s}
+.reels .ri.on{opacity:1}
+.reels .ri img{width:100%;height:100%;object-fit:cover}
+.reels .bars{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:5px;z-index:3}
+.reels .bars i{flex:1;height:3px;border-radius:3px;background:rgba(244,238,223,.35);overflow:hidden}
+.reels .bars i b{display:block;height:100%;width:0;background:#E0A53C}
+.reels .bars i.done b{width:100%}
+.reels .bars i.act b{animation:fill 3.5s linear forwards}
+@keyframes fill{to{width:100%}}
+.reels .cap{position:absolute;left:0;right:0;bottom:0;padding:1rem;background:linear-gradient(transparent,rgba(13,13,11,.9));z-index:3}
+.reels .cap .s{font-family:'Space Mono';font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#E0A53C}
+.reels .tap{position:absolute;inset:0;display:flex;z-index:2}
+.reels .tap .z{flex:1;cursor:pointer}
+
+/* G20 radial wheel */
+.wheelwrap{position:relative;height:clamp(360px,52vw,460px);overflow:hidden}
+.wheel{position:absolute;left:50%;top:60%;width:0;height:0}
+.wheel .wi{position:absolute;width:clamp(110px,16vw,160px);aspect-ratio:3/4;left:0;top:0;margin:calc(-1*clamp(73px,10.6vw,107px)) 0 0 calc(-1*clamp(55px,8vw,80px));border-radius:10px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.45);transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .6s,filter .6s;filter:grayscale(.4) brightness(.7)}
+.wheel .wi.focus{filter:grayscale(0) brightness(1);box-shadow:0 0 0 2px #E0A53C,0 18px 40px rgba(0,0,0,.6)}
+.wheel .wi img{width:100%;height:100%;object-fit:cover}
+.foot{max-width:1100px;margin:0 auto;padding:2.5rem 1.25rem 4rem;color:#B6AD95;font-weight:300;border-top:1px solid rgba(244,238,223,.12)}
+.foot b{color:#F4EEDF;font-weight:600}
+</style></head><body>
+<header class="head"><span class="kick">Dog Days Tattoo · Münster · Werke · Slider-Set 2</span>
+<h1>„Werke" — Optionen 16–20</h1><p>Noch fünf Slider-Spielarten. Voll interaktiv: Filmstrip, Hover-Pause, 3D-Tilt mit Maus, Reels &amp; Wheel. Bilder = Platzhalter.</p></header>
+
+<section><div class="meta"><span class="num">WERKE 16</span><h2 class="name">„Filmstrip + Stage"</h2>
+<p class="desc">Großes Hauptbild plus scrollbarer Thumbnail-Streifen darunter — wie eine Produkt-/Lightbox-Galerie. Schneller Überblick &amp; gezielte Auswahl. Klick die Thumbnails (live).</p>
+<div class="tags"><span class="tag">Big + Filmstrip</span><span class="tag">Klick-Swap</span><span class="tag">Überblick</span></div></div>
+<div class="stage"><div class="fs"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="big"><img id="fsbig" src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1200&q=60" alt="Ausgewähltes Werk"><div class="info"><div class="s"><span id="fss">Blackwork</span> · Custom</div></div></div>
+<div class="strip"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=200&q=60" data-big="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1200&q=60" data-s="Blackwork" class="on" alt="Werk 1"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=200&q=60" data-big="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=1200&q=60" data-s="Fine-Line" class="" alt="Werk 2"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=200&q=60" data-big="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=1200&q=60" data-s="Realism" class="" alt="Werk 3"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=200&q=60" data-big="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1200&q=60" data-s="Geometric" class="" alt="Werk 4"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=200&q=60" data-big="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=1200&q=60" data-s="Lettering" class="" alt="Werk 5"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=200&q=60" data-big="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=1200&q=60" data-s="Custom" class="" alt="Werk 6"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=200&q=60" data-big="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=1200&q=60" data-s="Dotwork" class="" alt="Werk 7"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=200&q=60" data-big="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1200&q=60" data-s="Blackwork" class="" alt="Werk 8"></div></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 17</span><h2 class="name">„Hover-Pause Marquee"</h2>
+<p class="desc">Eine dauerlaufende Bild-Reihe, die beim Mouseover anhält — das gehoverte Werk wird groß &amp; farbig. Verbindet die lebendige Bewegung der Hero mit gezieltem Betrachten. Fahr mit der Maus drüber.</p>
+<div class="tags"><span class="tag">Auto-Scroll</span><span class="tag">Pause on Hover</span><span class="tag">Scale-Focus</span></div></div>
+<div class="stage"><div class="hp"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="row"><div class="track"><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=500&q=60" alt=""></div><div class="it"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=500&q=60" alt=""></div></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 18</span><h2 class="name">„3D Tilt Cards"</h2>
+<p class="desc">Karten-Reihe, die sich beim Bewegen der Maus räumlich neigen (3D-Tilt) — taktil &amp; edel, jedes Werk fühlt sich „greifbar" an. Horizontal scrollbar. Maus über eine Karte bewegen.</p>
+<div class="tags"><span class="tag">Mouse-Tilt 3D</span><span class="tag">Scrollbar</span><span class="tag">Taktil</span></div></div>
+<div class="stage"><div class="tilt"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="rowt" id="tiltrow"><div class="ct"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=60" alt="Werk 1"></div><div class="ct"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=600&q=60" alt="Werk 2"></div><div class="ct"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=60" alt="Werk 3"></div><div class="ct"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=600&q=60" alt="Werk 4"></div><div class="ct"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=600&q=60" alt="Werk 5"></div><div class="ct"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=600&q=60" alt="Werk 6"></div><div class="ct"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=600&q=60" alt="Werk 7"></div></div></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 19</span><h2 class="name">„Reels" — Stories-Style</h2>
+<p class="desc">Hochformat-Reel wie Instagram-Stories: Fortschrittsbalken oben, automatischer Wechsel, Tap links/rechts zum Springen. Vertraut, mobil-stark, perfekt zur IG-affinen Tattoo-Community.</p>
+<div class="tags"><span class="tag">9:16 Reels</span><span class="tag">Progress-Bars</span><span class="tag">Tap-Navigation</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="reels" id="reels"><div class="bars"><i class="act"><b></b></i><i class=""><b></b></i><i class=""><b></b></i><i class=""><b></b></i><i class=""><b></b></i></div><div class="ri on"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=700&q=60" alt=""></div><div class="ri "><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=700&q=60" alt=""></div><div class="ri "><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=700&q=60" alt=""></div><div class="ri "><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=700&q=60" alt=""></div><div class="ri "><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=700&q=60" alt=""></div>
+<div class="tap"><span class="z" data-d="-1"></span><span class="z" data-d="1"></span></div>
+<div class="cap"><div class="s">Blackwork · Custom</div></div></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 20</span><h2 class="name">„Radial Wheel" — Galerie-Rad</h2>
+<p class="desc">Werke kreisförmig auf einem Rad angeordnet, das sich dreht — das obere Werk steht im Fokus (farbig, gerahmt), die anderen treten zurück. Ungewöhnlich, verspielt, echter Hingucker.</p>
+<div class="tags"><span class="tag">Radial</span><span class="tag">Rotation</span><span class="tag">Eyecatcher</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="wheelwrap"><div class="wheel" id="wheel"><div class="wi"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=400&q=60" alt="Werk 1"></div><div class="wi"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=400&q=60" alt="Werk 2"></div><div class="wi"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=400&q=60" alt="Werk 3"></div><div class="wi"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=400&q=60" alt="Werk 4"></div><div class="wi"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=400&q=60" alt="Werk 5"></div><div class="wi"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=400&q=60" alt="Werk 6"></div><div class="wi"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=400&q=60" alt="Werk 7"></div></div></div>
+<div class="nav"><button data-act="prev">‹</button><button data-act="next">›</button></div></div></section>
+
+<div class="foot"><p><b>Optionen 16–20.</b> Zusammen mit 1–15 = 20 Galerie-Optionen. Sag mir eine Nummer oder einen Mix.</p></div>
+
+<script>
+const STYLES=["Blackwork","Fine-Line","Realism","Geometric","Lettering","Custom","Dotwork"];
+// 16 filmstrip
+document.querySelectorAll('.fs .strip img').forEach(t=>t.onclick=()=>{
+ document.getElementById('fsbig').src=t.dataset.big;document.getElementById('fss').textContent=t.dataset.s;
+ document.querySelectorAll('.fs .strip img').forEach(x=>x.classList.remove('on'));t.classList.add('on');});
+// 18 tilt
+document.querySelectorAll('.tilt .ct').forEach(c=>{
+ c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;
+  c.style.transform='rotateY('+(x*18)+'deg) rotateX('+(-y*18)+'deg) scale(1.04)';});
+ c.addEventListener('mouseleave',()=>c.style.transform='');});
+// 19 reels
+(function(){const r=document.getElementById('reels');const ri=[...r.querySelectorAll('.ri')];const bars=[...r.querySelectorAll('.bars i')];let a=0,timer;
+ function show(n){a=(n+ri.length)%ri.length;ri.forEach((x,i)=>x.classList.toggle('on',i===a));
+  bars.forEach((b,i)=>{b.classList.remove('act','done');if(i<a)b.classList.add('done');if(i===a)b.classList.add('act')});
+  r.querySelector('.cap .s').textContent=STYLES[a%STYLES.length]+' · Custom';clearTimeout(timer);timer=setTimeout(()=>show(a+1),3500);}
+ r.querySelectorAll('.tap .z').forEach(z=>z.onclick=()=>show(a+ +z.dataset.d));show(0);})();
+// 20 wheel
+(function(){const w=document.getElementById('wheel');const its=[...w.querySelectorAll('.wi')];const n=its.length;const step=360/n;let base=0;
+ function rad(){const ww=w.closest('.wheelwrap').offsetWidth;return Math.min(170,Math.max(120,ww*0.22));}
+ function lay(){const R=rad();its.forEach((it,i)=>{const ang=base+i*step;const rry=ang*Math.PI/180;
+   it.style.transform='translate('+(Math.sin(rry)*R)+'px,'+(-Math.cos(rry)*R)+'px)';
+   const norm=((ang%360)+360)%360;const focus=Math.min(norm,360-norm)<step/2;it.classList.toggle('focus',focus);
+   it.style.opacity=focus?1:.8;it.style.zIndex=focus?10:1;});}
+ w.closest('.stage').querySelectorAll('.nav [data-act]').forEach(b=>b.onclick=()=>{base+=(b.dataset.act==='next'?-step:step);lay()});
+ window.addEventListener('resize',lay);lay();})();
+</script>
+</body></html>
