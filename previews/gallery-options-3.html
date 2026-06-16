@@ -1,0 +1,156 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — Werke Slider-Optionen (11–15)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#0d0d0b;color:#F4EEDF;font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.head{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) 1.25rem 1rem}
+.kick{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#E0A53C}
+.head h1{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.7rem,1rem+4vw,3rem);margin:.5rem 0 .5rem}
+.head p{color:#B6AD95;max-width:64ch;font-weight:300;line-height:1.65}
+.meta{max-width:1100px;margin:0 auto;padding:clamp(2rem,5vw,3rem) 1.25rem .9rem;display:grid;gap:.5rem;border-top:1px solid rgba(244,238,223,.12)}
+.num{font-family:'Space Mono',monospace;color:#E0A53C;font-size:.78rem;letter-spacing:.2em}
+.name{font-family:'Alfa Slab One',serif;font-size:clamp(1.3rem,1rem+2.2vw,2rem)}
+.desc{color:#B6AD95;font-weight:300;max-width:72ch;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+.tag{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(244,238,223,.2);padding:.35rem .6rem;border-radius:999px;color:#B6AD95}
+.stage{position:relative;margin:0 1.25rem;border:1px solid rgba(244,238,223,.14);border-radius:14px;overflow:hidden;padding:clamp(1.4rem,3vw,2.2rem)}
+.gtitle{text-align:center;margin-bottom:1.2rem}
+.gtitle h3{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.5rem,1rem+2.4vw,2.2rem);margin:.3rem 0}
+.nav{display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:1.1rem}
+.nav button{background:transparent;border:1px solid #E0A53C;color:#E0A53C;width:46px;height:46px;border-radius:999px;cursor:pointer;font-size:1.2rem;transition:.25s}
+.nav button:hover{background:#E0A53C;color:#141414}
+.dots{display:flex;gap:.5rem;justify-content:center;margin-top:.9rem}
+.dots i{width:8px;height:8px;border-radius:999px;background:rgba(244,238,223,.3);cursor:pointer;transition:.25s}
+.dots i.on{background:#E0A53C;width:22px}
+.scap{text-align:center;margin-top:.8rem;font-family:'Space Mono';font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#B6AD95}
+.scap b{color:#E0A53C;font-weight:400}
+
+/* engine stage */
+.car{position:relative;height:clamp(320px,46vw,440px);perspective:1400px}
+.car .cslide{position:absolute;top:50%;left:50%;width:clamp(200px,30vw,300px);aspect-ratio:3/4;margin:calc(-1*clamp(133px,20vw,200px)) 0 0 calc(-1*clamp(100px,15vw,150px));border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45);transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .55s;will-change:transform}
+.car .cslide img{width:100%;height:100%;object-fit:cover}
+
+/* G13 fade */
+.fade{position:relative;height:clamp(320px,46vw,460px);border-radius:10px;overflow:hidden}
+.fade .fi{position:absolute;inset:0;opacity:0;transition:opacity 1s;}
+.fade .fi.on{opacity:1}
+.fade .fi img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform 6s ease}
+.fade .fi.on img{transform:scale(1.14)}
+.fade .info{position:absolute;left:0;bottom:0;padding:1.1rem 1.3rem;background:linear-gradient(transparent,rgba(13,13,11,.92));z-index:3}
+.fade .info .s{font-family:'Space Mono';font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:#E0A53C}
+.fade .info .t{font-family:'Alfa Slab One',serif;font-size:1.3rem}
+.fade .ar{position:absolute;top:50%;transform:translateY(-50%);z-index:4;background:rgba(13,13,11,.5);border:1px solid #E0A53C;color:#E0A53C;width:44px;height:44px;border-radius:999px;cursor:pointer;font-size:1.1rem}
+.fade .ar.l{left:12px}.fade .ar.r{right:12px}
+
+/* G14 deck */
+.deck{position:relative;height:clamp(330px,46vw,440px);display:flex;align-items:center;justify-content:center}
+.deck .dc{position:absolute;width:clamp(220px,30vw,300px);aspect-ratio:3/4;border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.5);transition:.5s cubic-bezier(.2,.8,.2,1);cursor:grab}
+.deck .dc img{width:100%;height:100%;object-fit:cover}
+.deck .dc .lab{position:absolute;left:0;right:0;bottom:0;padding:.7rem;background:linear-gradient(transparent,rgba(13,13,11,.9));font-family:'Space Mono';font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:#E0A53C}
+.deck .hint{position:absolute;bottom:-6px;font-family:'Space Mono';font-size:.62rem;color:#B6AD95;letter-spacing:.1em}
+
+/* G15 split slider */
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:0;border-radius:10px;overflow:hidden;min-height:clamp(320px,42vw,420px)}
+.split .imgs{position:relative}
+.split .imgs .si{position:absolute;inset:0;opacity:0;transition:opacity .6s}
+.split .imgs .si.on{opacity:1}
+.split .imgs img{width:100%;height:100%;object-fit:cover}
+.split .panel{background:#F4EEDF;color:#141414;padding:clamp(1.4rem,3vw,2.4rem);display:flex;flex-direction:column;justify-content:center}
+.split .panel .s{font-family:'Space Mono';font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#5E624A}
+.split .panel h4{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(1.4rem,1rem+1.8vw,2rem);color:#C9842B;margin:.5rem 0}
+.split .panel p{color:#3a3a30;line-height:1.7;margin:0 0 1rem}
+.split .panel .pn{display:flex;gap:.6rem;margin-top:.5rem}
+.split .panel .pn button{flex:1;background:#141414;color:#E0A53C;border:0;padding:.7rem;border-radius:4px;cursor:pointer;font-family:'Space Mono';font-size:.72rem;letter-spacing:.1em;transition:.25s}
+.split .panel .pn button:hover{background:#C9842B;color:#141414}
+@media(max-width:680px){.split{grid-template-columns:1fr}.split .imgs{min-height:240px}}
+.foot{max-width:1100px;margin:0 auto;padding:2.5rem 1.25rem 4rem;color:#B6AD95;font-weight:300;border-top:1px solid rgba(244,238,223,.12)}
+.foot b{color:#F4EEDF;font-weight:600}
+</style></head><body>
+<header class="head"><span class="kick">Dog Days Tattoo · Münster · Werke · Slider-Set</span>
+<h1>„Werke" — Slider-Optionen 11–15</h1><p>Alle in der Slider/Karussell-Familie (wie #8). Voll interaktiv: Pfeile, Dots, Swipe, Klick. Bilder = Platzhalter.</p></header>
+
+<section><div class="meta"><span class="num">WERKE 11</span><h2 class="name">„3D Coverflow"</h2>
+<p class="desc">Echtes 3D-Coverflow: das mittlere Werk steht frontal, die seitlichen sind perspektivisch weggedreht. Sehr edel &amp; räumlich — wie eine digitale Galeriewand. Pfeile blättern.</p>
+<div class="tags"><span class="tag">3D Perspektive</span><span class="tag">rotateY</span><span class="tag">Center-Focus</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="car" data-mode="coverflow"><div class="cslide"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=60" alt="Werk 1"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=600&q=60" alt="Werk 2"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=60" alt="Werk 3"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=600&q=60" alt="Werk 4"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=600&q=60" alt="Werk 5"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=600&q=60" alt="Werk 6"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=600&q=60" alt="Werk 7"></div></div>
+<div class="nav"><button data-act="prev">‹</button><button data-act="next">›</button></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 12</span><h2 class="name">„Center Spotlight" — Autoplay</h2>
+<p class="desc">Das aktive Werk groß &amp; scharf in der Mitte, Nachbarn abgedunkelt &amp; verkleinert als „Peek". Läuft automatisch weiter, mit Dots &amp; Caption (Stil). Fokus auf je ein Werk, ohne Tiefe.</p>
+<div class="tags"><span class="tag">Spotlight</span><span class="tag">Autoplay</span><span class="tag">Dots + Caption</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="car" data-mode="spotlight" data-autoplay="1"><div class="cslide"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=60" alt="Werk 1"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=600&q=60" alt="Werk 2"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=600&q=60" alt="Werk 3"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=600&q=60" alt="Werk 4"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=600&q=60" alt="Werk 5"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=60" alt="Werk 6"></div><div class="cslide"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=600&q=60" alt="Werk 7"></div></div>
+<div class="scap">Stil: <b class="capout">Blackwork</b></div>
+<div class="dots"></div>
+<div class="nav"><button data-act="prev">‹</button><button data-act="next">›</button></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 13</span><h2 class="name">„Fade Slideshow" — Cinematic</h2>
+<p class="desc">Ein großes Werk füllt die Breite, sanftes Cross-Fade + langsamer Ken-Burns-Zoom. Caption mit Stil/Beschreibung, Pfeile &amp; Dots. Ruhig, filmisch, lässt jedes Werk wirken.</p>
+<div class="tags"><span class="tag">Crossfade</span><span class="tag">Ken-Burns</span><span class="tag">Fullwidth</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="fade" id="fade"><button class="ar l">‹</button><button class="ar r">›</button><div class="fi on"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1200&q=60" alt="Werk 1"></div><div class="fi "><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=1200&q=60" alt="Werk 2"></div><div class="fi "><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=1200&q=60" alt="Werk 3"></div><div class="fi "><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1200&q=60" alt="Werk 4"></div><div class="fi "><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=1200&q=60" alt="Werk 5"></div>
+<div class="info"><div class="s">Blackwork · Custom</div><div class="t">Unterarm — Custom Design</div></div></div>
+<div class="dots" id="fdots"></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 14</span><h2 class="name">„Swipe Deck" — Kartenstapel</h2>
+<p class="desc">Werke als Kartenstapel — die oberste Karte klickst (oder wischst) du nach hinten, die nächste kommt nach vorn. Spielerisch, mobil-stark, macht Lust aufs Durchblättern. Klick die Karte.</p>
+<div class="tags"><span class="tag">Card-Deck</span><span class="tag">Klick/Swipe</span><span class="tag">Mobile-stark</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="deck" id="deck"><div class="dc"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=60" alt=""><span class="lab">Blackwork · Custom</span></div><div class="dc"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=600&q=60" alt=""><span class="lab">Fine-Line · Custom</span></div><div class="dc"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=60" alt=""><span class="lab">Realism · Custom</span></div><div class="dc"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=600&q=60" alt=""><span class="lab">Geometric · Custom</span></div><div class="dc"><img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=600&q=60" alt=""><span class="lab">Lettering · Custom</span></div><span class="hint">↑ Karte klicken zum Durchblättern</span></div></div></section>
+
+<section><div class="meta"><span class="num">WERKE 15</span><h2 class="name">„Split Slider" — Werk + Info</h2>
+<p class="desc">Links das Werk, rechts ein Info-Panel das mitwechselt (Stil, Dauer, Beschreibung). Wie ein Ausstellungs-Katalog — perfekt um einzelne Tattoos mit Kontext &amp; Story zu zeigen. Buttons blättern.</p>
+<div class="tags"><span class="tag">Bild + Info synced</span><span class="tag">Katalog-Look</span><span class="tag">Kontext je Werk</span></div></div>
+<div class="stage"><div class="gtitle"><h3>Unsere Werke</h3></div>
+<div class="split" id="split"><div class="imgs"><div class="si on"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=900&q=60" alt=""></div><div class="si "><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=900&q=60" alt=""></div><div class="si "><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=900&q=60" alt=""></div><div class="si "><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=900&q=60" alt=""></div></div>
+<div class="panel"><div class="s">Werk <span class="idx">01</span> / 04</div><h4 class="ti">Custom Design</h4><p class="de">Individuell entworfen &amp; in mehreren Sessions umgesetzt. Jedes Detail in Abstimmung — ein echtes Unikat.</p>
+<div class="pn"><button data-act="prev">‹ Zurück</button><button data-act="next">Weiter ›</button></div></div></div></div></section>
+
+<div class="foot"><p><b>Slider-Optionen 11–15.</b> Plus die vorherigen 1–10 = 15 Galerie-Optionen gesamt. Sag mir eine Nummer oder einen Mix.</p></div>
+
+<script>
+const STYLES=["Blackwork","Fine-Line","Realism","Geometric","Lettering","Custom","Dotwork"];
+// Engine: coverflow / spotlight
+document.querySelectorAll('.car').forEach(car=>{
+ const slides=[...car.querySelectorAll('.cslide')];const mode=car.dataset.mode;let act=Math.floor(slides.length/2);
+ const wrap=car.closest('.stage');const dotsBox=wrap.querySelector('.dots');const capOut=wrap.querySelector('.capout');
+ if(dotsBox){slides.forEach((_,i)=>{const d=document.createElement('i');d.onclick=()=>{act=i;render()};dotsBox.appendChild(d)})}
+ function render(){
+  slides.forEach((s,i)=>{const o=i-act;const ad=Math.abs(o);
+   let tx,scale,rot,op,z;
+   if(mode==='coverflow'){tx=o*42;scale=o===0?1.05:.82;rot=Math.max(-45,Math.min(45,-o*38));op=ad>2?0:1;z=10-ad}
+   else{tx=o*60;scale=o===0?1:.8;rot=0;op=ad>1?.0:(o===0?1:.5);z=10-ad}
+   s.style.transform='translateX('+tx+'%) scale('+scale+') rotateY('+rot+'deg)';s.style.opacity=op;s.style.zIndex=z;
+  });
+  if(dotsBox)[...dotsBox.children].forEach((d,i)=>d.classList.toggle('on',i===act));
+  if(capOut)capOut.textContent=STYLES[act%STYLES.length];
+ }
+ wrap.querySelectorAll('.nav [data-act]').forEach(b=>b.onclick=()=>{act=(act+(b.dataset.act==='next'?1:-1)+slides.length)%slides.length;render()});
+ render();
+ if(car.dataset.autoplay){setInterval(()=>{act=(act+1)%slides.length;render()},3000)}
+});
+// Fade
+(function(){const f=document.getElementById('fade');const fi=[...f.querySelectorAll('.fi')];let a=0;const dots=document.getElementById('fdots');
+ fi.forEach((_,i)=>{const d=document.createElement('i');d.onclick=()=>go(i);dots.appendChild(d)});
+ function go(n){a=(n+fi.length)%fi.length;fi.forEach((x,i)=>x.classList.toggle('on',i===a));[...dots.children].forEach((d,i)=>d.classList.toggle('on',i===a));}
+ f.querySelector('.ar.l').onclick=()=>go(a-1);f.querySelector('.ar.r').onclick=()=>go(a+1);go(0);setInterval(()=>go(a+1),4500);
+})();
+// Deck
+(function(){const d=document.getElementById('deck');let cards=[...d.querySelectorAll('.dc')];
+ function lay(){cards.forEach((c,i)=>{c.style.transform='translateY('+(i*10)+'px) scale('+(1-i*0.05)+')';c.style.zIndex=cards.length-i;c.style.opacity=i>3?0:1});}
+ cards.forEach(c=>c.onclick=()=>{cards.push(cards.shift());lay()});lay();
+})();
+// Split
+(function(){const s=document.getElementById('split');const si=[...s.querySelectorAll('.si')];let a=0;
+ const titles=['Custom Design','Fine-Line Arbeit','Blackwork Sleeve','Lettering'];
+ const descs=['Individuell entworfen &amp; in mehreren Sessions umgesetzt — ein echtes Unikat.','Feine Linien mit großer Wirkung, in einer Sitzung gestochen.','Großflächige Blackwork-Arbeit über mehrere Termine.','Handgesetztes Lettering, exakt auf die Körperstelle abgestimmt.'];
+ function go(n){a=(n+si.length)%si.length;si.forEach((x,i)=>x.classList.toggle('on',i===a));
+  s.querySelector('.idx').textContent=String(a+1).padStart(2,'0');s.querySelector('.ti').textContent=titles[a];s.querySelector('.de').innerHTML=descs[a];}
+ s.querySelectorAll('.pn [data-act]').forEach(b=>b.onclick=()=>go(a+(b.dataset.act==='next'?1:-1)));go(0);
+})();
+</script>
+</body></html>
