@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Days Tattoo — Logo SVG-Nachbau</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;800&family=Rye&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#0d0d0b;color:#F4EEDF;font-family:'Space Mono',monospace;padding:2.5rem 1.25rem}
+  h1{font-family:Rye,serif;color:#E0A53C;font-weight:400;font-size:clamp(1.4rem,1rem+3vw,2.2rem)}
+  .sub{color:#B6AD95;max-width:60ch;line-height:1.6;font-size:.85rem}
+  .row{display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-end;margin:2rem 0;padding:2rem;border:1px solid rgba(244,238,223,.14);border-radius:14px}
+  .row.light{background:#F4EEDF}
+  .cap{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#B6AD95;margin-top:.6rem;text-align:center}
+  .light .cap{color:#5E624A}
+  .badge{display:inline-flex;flex-direction:column;align-items:center;line-height:1;gap:1px;background:#9DA17E;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.35);border:1px solid rgba(20,20,20,.12)}
+  .badge.unframed{background:transparent;box-shadow:none;border:none}
+  .dd{font-family:Rye,serif;color:#E0A53C;-webkit-text-stroke:1.5px #141414;paint-order:stroke fill;}
+  .tt{font-family:'Libre Franklin',sans-serif;font-weight:800;color:#141414;}
+  svg .run{animation:run 2.4s ease-in-out infinite}
+  @keyframes run{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+  .item{text-align:center}
+</style></head>
+<body>
+  <h1>Logo — SVG-Nachbau</h1>
+  <p class="sub">Zwei galoppierende Windhunde (schwarz hinten + gold vorne), „DOG DAYS" Western-Gold mit schwarzer Kontur, „TATTOO"-Banner. Verlustfrei skalierbar. Vergleich gern mit deinem Original — dein echtes PNG ersetzt das hier 1:1.</p>
+
+  <div class="row">
+    <div class="item"><div class="badge" id="b1"></div><div class="cap">Header · framed</div></div>
+    <div class="item"><div class="badge" id="b2"></div><div class="cap">Groß</div></div>
+    <div class="item"><div class="badge unframed" id="b3"></div><div class="cap">Freigestellt</div></div>
+  </div>
+
+  <div class="row light">
+    <div class="item"><div class="badge" id="b4"></div><div class="cap">Auf hell</div></div>
+    <div class="item"><div class="badge" id="b5"></div><div class="cap">Klein (Favicon-Test)</div></div>
+  </div>
+
+<script>
+  const DOG="M12,58 C18,52 24,49 30,46 C34,43 40,39 44,42 C47,44 46,47 44,49 C50,50 54,50 58,50 C66,49 72,48 78,48 C98,43 116,32 132,37 C150,41 162,46 172,49 C178,44 196,33 214,34 C221,34 224,39 221,43 C214,49 204,51 196,54 C190,56 185,59 182,64 C192,76 206,86 213,100 C215,104 210,106 207,102 C199,90 190,80 183,72 C184,82 186,92 186,101 C186,105 181,105 180,101 C178,91 176,82 174,74 C156,84 132,88 112,82 C92,88 76,96 62,106 C58,109 54,106 57,102 C70,92 82,84 94,77 C86,82 74,92 64,101 C60,104 55,102 58,98 C66,89 76,81 86,74 C72,72 56,72 44,70 C32,69 20,66 12,58 Z";
+  function logo(size){
+    const sv=`<svg class="run" viewBox="0 0 260 128" style="height:${size*0.5}px;width:auto"><path d="${DOG}" transform="translate(12 5)" fill="#141414"/><path d="${DOG}" fill="#E0A53C" stroke="#141414" stroke-width="2.4" stroke-linejoin="round"/></svg>`;
+    return `${sv}<span class="dd" style="font-size:${size*0.34}px;text-shadow:${size*0.03}px ${size*0.03}px 0 #141414;-webkit-text-stroke:${Math.max(1,size*0.02)}px #141414;margin-top:${size*0.04}px">Dog Days</span><span class="tt" style="font-size:${size*0.115}px;letter-spacing:.42em;padding-left:.42em;margin-top:${size*0.02}px">TATTOO</span>`;
+  }
+  function pad(el,size){el.style.padding=`${size*0.13}px ${size*0.22}px ${size*0.14}px`}
+  const set=(id,size,p=true)=>{const e=document.getElementById(id);e.innerHTML=logo(size);if(p)pad(e,size)};
+  set('b1',90);set('b2',150);set('b3',110,false);set('b4',90);set('b5',48);
+</script>
+</body></html>
