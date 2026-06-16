@@ -12,25 +12,27 @@ img{display:block;max-width:100%}
 .h p{color:#B6AD95;font-weight:300;max-width:52ch;margin:.8rem auto 0}
 .rows{display:flex;flex-direction:column;gap:12px}
 .row{overflow:hidden}
-.track{display:flex;gap:12px;width:max-content;animation:ml 28s linear infinite}
-.row.r2 .track{animation:mr 34s linear infinite}
+.track{display:flex;width:max-content;animation:ml 40s linear infinite;will-change:transform}
+.row.r2 .track{animation:mr 48s linear infinite}
 .row:hover .track{animation-play-state:paused}
-@keyframes ml{to{transform:translateX(-50%)}}@keyframes mr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.it{position:relative;height:clamp(150px,26vw,210px);aspect-ratio:3/4;flex:none;border:0;padding:0;border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .3s;background:none}
+/* nahtlos: -50% entspricht exakt EINER Kopie inkl. Trailing-Margin pro Kachel */
+@keyframes ml{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.it{position:relative;height:clamp(150px,26vw,210px);aspect-ratio:3/4;flex:none;margin-right:12px;border:0;padding:0;border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .3s;background:none}
 .it img{height:100%;width:100%;object-fit:cover;filter:grayscale(1);transition:.5s}
 .it:hover{transform:scale(1.06);z-index:5}
 .it:hover img{filter:grayscale(0)}
 .cap{position:absolute;left:0;right:0;bottom:0;padding:.5rem .7rem;background:linear-gradient(transparent,rgba(13,13,11,.9));font-family:'Space Mono';font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#E0A53C;text-align:left;transform:translateY(100%);transition:.3s}
 .it:hover .cap{transform:translateY(0)}
 .lb{position:fixed;inset:0;z-index:100;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(13,13,11,.95);backdrop-filter:blur(4px);padding:1rem}
-.lb.on{display:flex;animation:f .3s ease}
-@keyframes f{from{opacity:0}to{opacity:1}}
+.lb.on{display:flex;animation:f .3s ease}@keyframes f{from{opacity:0}to{opacity:1}}
 .lb img{max-height:85vh;max-width:92vw;border-radius:10px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
 .lb .x{position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:999px;border:1px solid #E0A53C;background:none;color:#E0A53C;font-size:1.2rem;cursor:pointer}
 .lb .x:hover{background:#E0A53C;color:#141414}
 .lb .meta{margin-top:1rem;text-align:center}
 .lb .meta .s{font-family:'Space Mono';font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#E0A53C}
 .lb .btn{display:inline-block;margin-top:.8rem;border:1px solid #E0A53C;background:#E0A53C;color:#141414;padding:.6rem 1.4rem;font-weight:600;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;text-decoration:none}
+@media(prefers-reduced-motion:reduce){.track{animation:none}}
 </style></head><body>
 <section class="sec"><div class="h"><span class="kick">Ausgewählte Arbeiten</span><h2>Unsere Werke</h2>
 <p>Fahr mit der Maus über die Reihe, um sie anzuhalten — und klick ein Werk für die volle Ansicht.</p></div>

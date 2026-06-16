@@ -30,7 +30,7 @@ function Row({ works, direction, onOpen }: { works: Work[]; direction: "left" | 
   return (
     <div className="group overflow-hidden">
       <div
-        className={`flex w-max gap-3 ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"} group-hover:[animation-play-state:paused] motion-reduce:animate-none`}
+        className={`flex w-max ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"} group-hover:[animation-play-state:paused] motion-reduce:animate-none`}
       >
         {items.map((w, i) => (
           <button
@@ -38,7 +38,7 @@ function Row({ works, direction, onOpen }: { works: Work[]; direction: "left" | 
             type="button"
             onClick={() => onOpen(w)}
             aria-label={`${w.style}-Werk vergrößern`}
-            className="group/it relative h-[clamp(150px,26vw,210px)] aspect-[3/4] flex-none overflow-hidden rounded-lg transition-transform duration-300 hover:z-10 hover:scale-[1.06] focus-visible:scale-[1.06]"
+            className="group/it relative mr-3 h-[clamp(150px,26vw,210px)] aspect-[3/4] flex-none overflow-hidden rounded-lg transition-transform duration-300 hover:z-10 hover:scale-[1.06] focus-visible:scale-[1.06]"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
