@@ -7,13 +7,14 @@ import { PHONE_HREF } from "@/lib/site";
 
 const LEFT_LINKS = [
   { label: "Atelier", href: "#atelier" },
-  { label: "Künstler", href: "#kuenstler" },
   { label: "Werke", href: "#werke" },
+  { label: "Bewertungen", href: "#bewertungen" },
 ];
 
 const RIGHT_LINKS = [
   { label: "Ablauf", href: "#ablauf" },
   { label: "FAQ", href: "#faq" },
+  { label: "Kontakt", href: "#kontakt" },
   { label: "Termin", href: "#kontakt", cta: true },
 ];
 

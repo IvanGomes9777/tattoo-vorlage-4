@@ -64,6 +64,27 @@ const jsonLd = {
       telephone: "+490000000000", // TODO: echte Telefonnummer (siehe lib/site.ts)
       // TODO: Öffnungszeiten ergänzen, sobald vom Kunden bestätigt.
       description: "Privates Tattoo-Atelier in Münster. Custom-Tattoos, Termine nach Vereinbarung.",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5.0",
+        reviewCount: "14",
+        bestRating: "5",
+      },
+      review: [
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Ju Lia" },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody:
+            "Joey hat mich tätowiert und ich bin rundum glücklich! Ein sehr sympathischer Mensch, der sehr gute Arbeit macht.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Stephan S." },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: "Echt ne dufte Bude! Rundum ein Ort zum Wohlfühlen! Top Beratung, Tattoos und noch'n guten Schnack oben drauf!",
+        },
+      ],
     },
     {
       "@type": "WebSite",
