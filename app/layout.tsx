@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Individuelle Custom-Tattoos in ruhiger, stilvoller Atmosphäre. Termine nach Vereinbarung.",
   },
   twitter: { card: "summary_large_image", title: "Dog Days Tattoo Münster", description: "Privates Tattoo-Atelier — Termine nach Vereinbarung." },
-  icons: { icon: "/icon.svg" },
+  // Favicon & Apple-Icon via Datei-Konvention: app/icon.png + app/apple-icon.png
   robots: { index: true, follow: true },
 };
 

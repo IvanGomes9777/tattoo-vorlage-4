@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        // "20 Zoll"-Schwelle: ab hier volle, sticky Navbar
+        d20: "1600px",
+      },
       colors: {
         olive: { DEFAULT: "#9DA17E", dark: "#5E624A", deep: "#7E8262" },
         gold: { DEFAULT: "#E0A53C", deep: "#C9842B" },

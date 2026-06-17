@@ -40,68 +40,81 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color,padding] duration-500 ${
-        solid
-          ? "bg-[#0d0d0b]/92 backdrop-blur-md border-b border-gold/30 py-2"
-          : "bg-[#0d0d0b]/30 backdrop-blur-md border-b border-gold/20 py-3"
-      }`}
+      className={`relative z-50 border-b backdrop-blur-md transition-[background-color,border-color,padding] duration-500 d20:fixed d20:inset-x-0 d20:top-0 py-3
+        bg-[#0d0d0b]/95 border-gold/25
+        ${solid ? "d20:py-2 d20:border-gold/30" : "d20:py-3 d20:border-gold/20 d20:bg-[#0d0d0b]/30"}`}
     >
       <nav
         aria-label="Hauptnavigation"
         className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-[clamp(1rem,3vw,2.2rem)]"
       >
-        {/* Left links (desktop) */}
-        <ul className="hidden items-center gap-[clamp(.8rem,2vw,1.7rem)] lg:flex">
-          {LEFT_LINKS.map((l) => (
-            <li key={l.href}>
-              <NavLink {...l} />
-            </li>
-          ))}
-        </ul>
+        {/* LINKS: volle Links (≥20″) ODER Burger (Handy <768px) */}
+        <div className="flex items-center justify-self-start">
+          <ul className="hidden items-center gap-[clamp(.8rem,2vw,1.7rem)] d20:flex">
+            {LEFT_LINKS.map((l) => (
+              <li key={l.href}>
+                <NavLink {...l} />
+              </li>
+            ))}
+          </ul>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Menü schließen" : "Menü öffnen"}
+            aria-expanded={open}
+            className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] md:hidden"
+          >
+            <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "translate-y-[6.5px] rotate-45" : ""}`} />
+            <span className={`h-[1.5px] w-6 bg-cream transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
+            <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`} />
+          </button>
+        </div>
 
-        {/* Mobile: burger left */}
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Menü schließen" : "Menü öffnen"}
-          aria-expanded={open}
-          className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] justify-self-start lg:hidden"
-        >
-          <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "translate-y-[6.5px] rotate-45" : ""}`} />
-          <span className={`h-[1.5px] w-6 bg-cream transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
-          <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`} />
-        </button>
-
-        {/* Centered emblem / logo */}
+        {/* MITTE: Logo */}
         <a href="#top" className="justify-self-center" aria-label="Dog Days Tattoo — Startseite">
           <Logo size={solid ? 52 : 58} framed priority />
         </a>
 
-        {/* Right links (desktop) */}
-        <ul className="hidden items-center justify-end gap-[clamp(.8rem,2vw,1.7rem)] lg:flex">
-          {RIGHT_LINKS.map((l) => (
-            <li key={l.href}>
-              <NavLink {...l} />
+        {/* RECHTS: volle Links + Telefon (≥20″) ODER kompakte Buttons Anruf+Termin (768–1599px) */}
+        <div className="flex items-center justify-end justify-self-end">
+          <ul className="hidden items-center gap-[clamp(.8rem,2vw,1.7rem)] d20:flex">
+            {RIGHT_LINKS.map((l) => (
+              <li key={l.href}>
+                <NavLink {...l} />
+              </li>
+            ))}
+            <li>
+              <a
+                href={PHONE_HREF}
+                aria-label="Anrufen"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 text-gold transition-colors duration-300 hover:bg-gold hover:text-ink"
+              >
+                <PhoneIcon />
+              </a>
             </li>
-          ))}
-          <li>
+          </ul>
+
+          {/* Kompakt: Anruf + Termin (Tablet/Laptop <20″) */}
+          <div className="hidden items-center gap-2 md:flex d20:hidden">
             <a
               href={PHONE_HREF}
-              aria-label="Anrufen"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 text-gold transition-colors duration-300 hover:bg-gold hover:text-ink"
+              className="inline-flex items-center gap-2 rounded-sm border border-gold/60 px-4 py-2 font-sans text-xs font-semibold uppercase tracking-[.1em] text-gold transition-colors duration-300 hover:bg-gold hover:text-ink"
             >
-              <PhoneIcon />
+              <PhoneIcon /> Anrufen
             </a>
-          </li>
-        </ul>
-
-        {/* Spacer to balance the grid on mobile (right column) */}
-        <span className="lg:hidden" aria-hidden="true" />
+            <a
+              href="#kontakt"
+              className="rounded-sm border border-gold bg-gold px-4 py-2 font-sans text-xs font-semibold uppercase tracking-[.1em] text-ink transition-colors duration-300 hover:bg-transparent hover:text-gold"
+            >
+              Termin
+            </a>
+          </div>
+        </div>
       </nav>
 
-      {/* Mobile fullscreen overlay */}
+      {/* Handy: Fullscreen-Overlay (Burger) */}
       <div
-        className={`fixed inset-0 -z-10 flex flex-col items-center justify-center gap-5 bg-[#0d0d0b]/97 backdrop-blur-sm transition-opacity duration-500 lg:hidden ${
+        className={`fixed inset-0 -z-10 flex flex-col items-center justify-center gap-5 bg-[#0d0d0b]/97 backdrop-blur-sm transition-opacity duration-500 md:hidden ${
           open ? "z-40 opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
