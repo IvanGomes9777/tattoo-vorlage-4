@@ -14,7 +14,7 @@ const LEGAL = [
   { label: "Impressum", href: "/impressum" },
   { label: "Datenschutz", href: "/datenschutz" },
   { label: "AGB", href: "/agb" },
-  { label: "Cookie-Einstellungen", href: "#" },
+  { label: "Cookies", href: "/datenschutz#cookies" },
 ];
 
 const INSTAGRAM = "https://www.instagram.com/dogdays_tattoo/";
