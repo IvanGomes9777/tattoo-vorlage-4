@@ -113,38 +113,52 @@ export function Navbar() {
             </ul>
           </div>
         </nav>
+      </header>
 
-        {/* Handy: Fullscreen-Overlay (Burger) */}
-        <div
-          className={`fixed inset-0 -z-10 flex flex-col items-center justify-center gap-5 bg-[#0d0d0b]/97 backdrop-blur-sm transition-opacity duration-500 lg:hidden ${
-            open ? "z-40 opacity-100" : "pointer-events-none opacity-0"
+      {/* Handy: Fullscreen-Overlay (Burger) — außerhalb des <header>, damit
+          es relativ zum Viewport liegt (der Header hat eine transform und
+          würde sonst das fixed-Positioning des Overlays einschränken). */}
+      <div
+        aria-hidden={!open}
+        className={`fixed inset-0 z-[60] flex flex-col items-center justify-center gap-5 bg-[#0d0d0b]/97 backdrop-blur-sm transition-opacity duration-500 lg:hidden ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        {/* Schließen-Button (X) oben rechts im Overlay */}
+        <button
+          type="button"
+          onClick={() => setOpen(false)}
+          aria-label="Menü schließen"
+          className="absolute right-4 top-4 flex h-11 w-11 flex-col items-center justify-center"
+        >
+          <span className="absolute h-[1.5px] w-6 rotate-45 bg-cream" />
+          <span className="absolute h-[1.5px] w-6 -rotate-45 bg-cream" />
+        </button>
+
+        {ALL_LINKS.map((l, i) => (
+          <a
+            key={l.href}
+            href={l.href}
+            onClick={() => setOpen(false)}
+            style={{ transitionDelay: open ? `${0.06 + i * 0.06}s` : "0s" }}
+            className={`font-western text-3xl transition-all duration-500 ${
+              "cta" in l && l.cta ? "text-gold" : "text-cream-dim hover:text-gold"
+            } ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
+          >
+            {l.label}
+          </a>
+        ))}
+        <a
+          href={PHONE_HREF}
+          onClick={() => setOpen(false)}
+          style={{ transitionDelay: open ? `${0.06 + ALL_LINKS.length * 0.06}s` : "0s" }}
+          className={`mt-2 inline-flex items-center gap-2 rounded-full border border-gold px-6 py-3 font-sans text-base font-semibold uppercase tracking-[.12em] text-gold transition-all duration-500 ${
+            open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
           }`}
         >
-          {ALL_LINKS.map((l, i) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              style={{ transitionDelay: open ? `${0.06 + i * 0.06}s` : "0s" }}
-              className={`font-western text-3xl transition-all duration-500 ${
-                "cta" in l && l.cta ? "text-gold" : "text-cream-dim hover:text-gold"
-              } ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href={PHONE_HREF}
-            onClick={() => setOpen(false)}
-            style={{ transitionDelay: open ? `${0.06 + ALL_LINKS.length * 0.06}s` : "0s" }}
-            className={`mt-2 inline-flex items-center gap-2 rounded-full border border-gold px-6 py-3 font-sans text-base font-semibold uppercase tracking-[.12em] text-gold transition-all duration-500 ${
-              open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-            }`}
-          >
-            <PhoneIcon /> Anrufen
-          </a>
-        </div>
-      </header>
+          <PhoneIcon /> Anrufen
+        </a>
+      </div>
 
       {/* Nach dem Hero: nur noch Anruf + Termin (schwebend) */}
       <div
