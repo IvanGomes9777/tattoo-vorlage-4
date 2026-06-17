@@ -46,7 +46,7 @@ export function Faq() {
 
       <div className="mx-auto grid max-w-6xl gap-[clamp(1.5rem,4vw,3rem)] px-6 lg:grid-cols-[.8fr_1.2fr]">
         {/* Sticky Lead */}
-        <div className="lg:sticky lg:top-28 lg:self-start">
+        <div data-reveal="left" className="lg:sticky lg:top-28 lg:self-start">
           <p className="font-mono text-xs uppercase tracking-[.3em] text-gold">Gut zu wissen</p>
           <h2 className="mt-2 font-display text-[clamp(1.6rem,1rem+2.6vw,2.6rem)] leading-[1.05] text-cream">
             Häufige
@@ -67,7 +67,7 @@ export function Faq() {
         {/* Fragen */}
         <div>
           {FAQ.map((f, i) => (
-            <details key={f.q} name="faq" open={i === 0} className="group border-b border-cream/14">
+            <details key={f.q} name="faq" open={i === 0} data-reveal="up" style={{ transitionDelay: `${i * 70}ms` }} className="group border-b border-cream/14">
               <summary className="flex cursor-pointer list-none items-center gap-3 py-[clamp(.9rem,2.5vw,1.1rem)] text-[clamp(1rem,1rem+.3vw,1.1rem)] font-semibold text-cream [&::-webkit-details-marker]:hidden">
                 <span>{f.q}</span>
                 <span className="ml-auto text-xl text-gold transition-transform duration-300 group-open:rotate-45">+</span>

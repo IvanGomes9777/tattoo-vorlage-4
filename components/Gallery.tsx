@@ -87,7 +87,7 @@ export function Gallery() {
 
   return (
     <section id="werke" className="bg-[#0d0d0b] py-[clamp(3rem,8vw,6rem)]">
-      <div className="mx-auto mb-[clamp(1.5rem,4vw,2.5rem)] max-w-6xl px-6 text-center">
+      <div data-reveal="up" className="mx-auto mb-[clamp(1.5rem,4vw,2.5rem)] max-w-6xl px-6 text-center">
         <p className="font-mono text-xs uppercase tracking-[.3em] text-gold">Ausgewählte Arbeiten</p>
         <h2 className="mt-2 font-display text-[clamp(1.6rem,1rem+2.6vw,2.6rem)] text-cream">Unsere Werke</h2>
         <p className="mx-auto mt-3 max-w-[52ch] font-light text-cream-dim">
@@ -101,7 +101,7 @@ export function Gallery() {
       </div>
 
       {/* Instagram-CTA — eure Hauptpräsenz */}
-      <div className="mt-[clamp(1.8rem,4vw,2.8rem)] flex justify-center px-6">
+      <div data-reveal="up" className="mt-[clamp(1.8rem,4vw,2.8rem)] flex justify-center px-6">
         <a
           href={INSTAGRAM_URL}
           target="_blank"

@@ -31,7 +31,7 @@ export function Footer() {
 
       <div className="relative mx-auto max-w-4xl px-6 py-[clamp(2.5rem,6vw,4rem)] text-center">
         {/* Logo-Medaillon */}
-        <span className="inline-block rounded-full bg-cream p-[7px] outline outline-1 outline-gold">
+        <span data-reveal="scale" className="inline-block rounded-full bg-cream p-[7px] outline outline-1 outline-gold">
           <Image
             src="/dogdaytattoo-logo.png"
             alt="Dog Days Tattoo — Logo"
@@ -42,7 +42,7 @@ export function Footer() {
         </span>
 
         {/* Instagram + Anruf — prominent */}
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+        <div data-reveal="up" style={{ transitionDelay: "80ms" }} className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <a
             href={INSTAGRAM}
             target="_blank"
@@ -69,7 +69,7 @@ export function Footer() {
         </p>
 
         {/* Navigation */}
-        <nav className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2" aria-label="Footer-Navigation">
+        <nav data-reveal="up" style={{ transitionDelay: "160ms" }} className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2" aria-label="Footer-Navigation">
           {NAV.map((l) => (
             <a key={l.href} href={l.href} className="font-light text-cream/90 transition-colors hover:text-gold">
               {l.label}

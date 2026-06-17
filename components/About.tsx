@@ -17,7 +17,7 @@ export function About() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-y-0 lg:grid-cols-2">
         {/* Foto (rechts, im Layout zuerst auf Mobile) */}
-        <div className="order-1 lg:order-2 lg:pl-16">
+        <div data-reveal="right" className="order-1 lg:order-2 lg:pl-16">
           <div className="relative ml-auto aspect-[4/5] w-full max-w-[480px] overflow-hidden rounded-lg shadow-[0_24px_50px_rgba(0,0,0,.45)]">
             <Image
               src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=800&q=70"
@@ -31,7 +31,7 @@ export function About() {
 
         {/* Textkarte (links), überlappt zur Mitte */}
         <div className="order-2 -mt-12 lg:order-1 lg:-mr-16 lg:mt-0">
-          <div className="relative z-[2] max-w-[460px] rounded-xl bg-cream p-[clamp(1.6rem,4vw,2.6rem)] text-ink shadow-[0_18px_40px_rgba(0,0,0,.35)]">
+          <div data-reveal="left" className="relative z-[2] max-w-[460px] rounded-xl bg-cream p-[clamp(1.6rem,4vw,2.6rem)] text-ink shadow-[0_18px_40px_rgba(0,0,0,.35)]">
             <p className="font-mono text-xs uppercase tracking-[.28em] text-olive-dark">Kein Studio. Ein Atelier.</p>
             <h2 className="mt-3 font-display text-[clamp(1.6rem,1rem+2.6vw,2.4rem)] leading-[1.06] text-gold-deep">
               Persönlich.

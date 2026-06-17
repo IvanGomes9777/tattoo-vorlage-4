@@ -30,7 +30,7 @@ export function Ablauf() {
   return (
     <section id="ablauf" className="bg-[#0d0d0b] py-[clamp(3rem,8vw,6rem)]">
       <div className="mx-auto max-w-3xl px-6">
-        <div className="text-center">
+        <div data-reveal="up" className="text-center">
           <p className="font-mono text-xs uppercase tracking-[.3em] text-gold">So funktioniert&apos;s</p>
           <h2 className="mt-2 font-display text-[clamp(1.6rem,1rem+2.6vw,2.6rem)] text-cream">Von der Idee zum Tattoo</h2>
           <p className="mx-auto mt-3 max-w-[50ch] font-light text-cream-dim">
@@ -44,6 +44,8 @@ export function Ablauf() {
               key={s.n}
               name="ablauf"
               open={i === 0}
+              data-reveal="up"
+              style={{ transitionDelay: `${i * 80}ms` }}
               className="group mb-3 overflow-hidden rounded-xl border border-cream/15 bg-[#121210] transition-colors duration-300 open:border-gold/50"
             >
               <summary className="flex cursor-pointer list-none items-center gap-4 p-[clamp(1rem,3vw,1.2rem)] font-display text-[clamp(1.05rem,1rem+.5vw,1.2rem)] text-cream [&::-webkit-details-marker]:hidden">
@@ -58,7 +60,7 @@ export function Ablauf() {
           ))}
         </div>
 
-        <div className="mt-8 text-center">
+        <div data-reveal="up" className="mt-8 text-center">
           <a
             href="#kontakt"
             className="inline-block rounded-sm border border-gold bg-gold px-7 py-3 font-sans text-sm font-semibold uppercase tracking-[.14em] text-ink transition-colors duration-300 hover:bg-transparent hover:text-gold"

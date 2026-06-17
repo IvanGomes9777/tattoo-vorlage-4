@@ -14,14 +14,14 @@ export function Contact() {
   return (
     <section id="kontakt" className="bg-[#0d0d0b] py-[clamp(3rem,8vw,6rem)]">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-[clamp(1.5rem,4vw,2.5rem)] text-center">
+        <div data-reveal="up" className="mb-[clamp(1.5rem,4vw,2.5rem)] text-center">
           <p className="font-mono text-xs uppercase tracking-[.3em] text-gold">Lass uns reden</p>
           <h2 className="mt-2 font-display text-[clamp(1.6rem,1rem+2.6vw,2.6rem)] text-cream">Dein Tattoo beginnt hier</h2>
         </div>
 
         <div className="grid overflow-hidden rounded-2xl border border-cream/14 lg:grid-cols-2">
           {/* Formular */}
-          <div className="p-[clamp(1.6rem,4vw,2.6rem)]">
+          <div data-reveal="left" className="p-[clamp(1.6rem,4vw,2.6rem)]">
             {state.ok ? (
               <div className="flex h-full min-h-[320px] flex-col items-center justify-center text-center">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-gold text-2xl text-gold">✓</div>
@@ -78,7 +78,7 @@ export function Contact() {
           </div>
 
           {/* Info + Karte */}
-          <div className="flex flex-col bg-[#121210] p-[clamp(1.6rem,4vw,2.6rem)]">
+          <div data-reveal="right" className="flex flex-col bg-[#121210] p-[clamp(1.6rem,4vw,2.6rem)]">
             <p className="font-mono text-xs uppercase tracking-[.3em] text-gold">So erreichst du uns</p>
             <ul className="mt-4 space-y-4">
               <InfoLine icon="📍" label="Adresse">Weseler Str. 47, 48151 Münster</InfoLine>

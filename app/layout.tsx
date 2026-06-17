@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Alfa_Slab_One, Rye, Libre_Franklin, Inter, Space_Mono } from "next/font/google";
+import { RevealInit } from "@/components/RevealInit";
 import "./globals.css";
 
 const alfa = Alfa_Slab_One({ weight: "400", subsets: ["latin"], variable: "--font-alfa", display: "swap" });
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-body">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {children}
+        <RevealInit />
       </body>
     </html>
   );
