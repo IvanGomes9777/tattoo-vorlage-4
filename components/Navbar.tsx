@@ -22,6 +22,7 @@ const ALL_LINKS = [...LEFT_LINKS, ...RIGHT_LINKS];
 export function Navbar() {
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
+  const [heroOut, setHeroOut] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 24);
@@ -30,7 +31,19 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when the mobile overlay is open.
+  // Navbar nur im Hero zeigen; danach verschwindet sie und nur Anruf+Termin bleiben.
+  useEffect(() => {
+    const hero = document.getElementById("top");
+    if (!hero) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setHeroOut(!entry.isIntersecting),
+      { threshold: 0, rootMargin: "-72px 0px 0px 0px" }
+    );
+    io.observe(hero);
+    return () => io.disconnect();
+  }, []);
+
+  // Body-Scroll sperren, wenn das Mobile-Overlay offen ist.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -38,111 +51,122 @@ export function Navbar() {
     };
   }, [open]);
 
+  // Overlay schließen, sobald wir aus dem Hero raus sind (Navbar verschwindet).
+  useEffect(() => {
+    if (heroOut) setOpen(false);
+  }, [heroOut]);
+
   return (
-    <header
-      className={`relative z-50 border-b backdrop-blur-md transition-[background-color,border-color,padding] duration-500 d20:fixed d20:inset-x-0 d20:top-0 py-3
-        bg-[#0d0d0b]/95 border-gold/25
-        ${solid ? "d20:py-2 d20:border-gold/30" : "d20:py-3 d20:border-gold/20 d20:bg-[#0d0d0b]/30"}`}
-    >
-      <nav
-        aria-label="Hauptnavigation"
-        className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-[clamp(1rem,3vw,2.2rem)]"
+    <>
+      {/* Normale Navbar — nur sichtbar im Hero */}
+      <header
+        className={`fixed inset-x-0 top-0 z-50 backdrop-blur-md transition-[transform,opacity,background-color,border-color,padding] duration-500 ${
+          heroOut ? "-translate-y-full opacity-0 pointer-events-none" : "translate-y-0 opacity-100"
+        } ${solid ? "bg-[#0d0d0b]/92 border-b border-gold/30 py-2" : "bg-[#0d0d0b]/30 border-b border-gold/20 py-3"}`}
       >
-        {/* LINKS: volle Links (≥20″) ODER Burger (Handy <768px) */}
-        <div className="flex items-center justify-self-start">
-          <ul className="hidden items-center gap-[clamp(.8rem,2vw,1.7rem)] d20:flex">
-            {LEFT_LINKS.map((l) => (
-              <li key={l.href}>
-                <NavLink {...l} />
-              </li>
-            ))}
-          </ul>
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Menü schließen" : "Menü öffnen"}
-            aria-expanded={open}
-            className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] md:hidden"
-          >
-            <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "translate-y-[6.5px] rotate-45" : ""}`} />
-            <span className={`h-[1.5px] w-6 bg-cream transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
-            <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`} />
-          </button>
-        </div>
-
-        {/* MITTE: Logo */}
-        <a href="#top" className="justify-self-center" aria-label="Dog Days Tattoo — Startseite">
-          <Logo size={solid ? 52 : 58} framed priority />
-        </a>
-
-        {/* RECHTS: volle Links + Telefon (≥20″) ODER kompakte Buttons Anruf+Termin (768–1599px) */}
-        <div className="flex items-center justify-end justify-self-end">
-          <ul className="hidden items-center gap-[clamp(.8rem,2vw,1.7rem)] d20:flex">
-            {RIGHT_LINKS.map((l) => (
-              <li key={l.href}>
-                <NavLink {...l} />
-              </li>
-            ))}
-            <li>
-              <a
-                href={PHONE_HREF}
-                aria-label="Anrufen"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 text-gold transition-colors duration-300 hover:bg-gold hover:text-ink"
-              >
-                <PhoneIcon />
-              </a>
-            </li>
-          </ul>
-
-          {/* Kompakt: Anruf + Termin (Tablet/Laptop <20″) */}
-          <div className="hidden items-center gap-2 md:flex d20:hidden">
-            <a
-              href={PHONE_HREF}
-              className="inline-flex items-center gap-2 rounded-sm border border-gold/60 px-4 py-2 font-sans text-xs font-semibold uppercase tracking-[.1em] text-gold transition-colors duration-300 hover:bg-gold hover:text-ink"
+        <nav
+          aria-label="Hauptnavigation"
+          className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-[clamp(1rem,3vw,2.2rem)]"
+        >
+          <div className="flex items-center justify-self-start">
+            <ul className="hidden items-center gap-[clamp(.8rem,2vw,1.7rem)] lg:flex">
+              {LEFT_LINKS.map((l) => (
+                <li key={l.href}>
+                  <NavLink {...l} />
+                </li>
+              ))}
+            </ul>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Menü schließen" : "Menü öffnen"}
+              aria-expanded={open}
+              className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] lg:hidden"
             >
-              <PhoneIcon /> Anrufen
-            </a>
-            <a
-              href="#kontakt"
-              className="rounded-sm border border-gold bg-gold px-4 py-2 font-sans text-xs font-semibold uppercase tracking-[.1em] text-ink transition-colors duration-300 hover:bg-transparent hover:text-gold"
-            >
-              Termin
-            </a>
+              <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "translate-y-[6.5px] rotate-45" : ""}`} />
+              <span className={`h-[1.5px] w-6 bg-cream transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
+              <span className={`h-[1.5px] w-6 bg-cream transition-transform duration-300 ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`} />
+            </button>
           </div>
-        </div>
-      </nav>
 
-      {/* Handy: Fullscreen-Overlay (Burger) */}
-      <div
-        className={`fixed inset-0 -z-10 flex flex-col items-center justify-center gap-5 bg-[#0d0d0b]/97 backdrop-blur-sm transition-opacity duration-500 md:hidden ${
-          open ? "z-40 opacity-100" : "pointer-events-none opacity-0"
-        }`}
-      >
-        {ALL_LINKS.map((l, i) => (
-          <a
-            key={l.href}
-            href={l.href}
-            onClick={() => setOpen(false)}
-            style={{ transitionDelay: open ? `${0.06 + i * 0.06}s` : "0s" }}
-            className={`font-western text-3xl transition-all duration-500 ${
-              "cta" in l && l.cta ? "text-gold" : "text-cream-dim hover:text-gold"
-            } ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
-          >
-            {l.label}
+          <a href="#top" className="justify-self-center" aria-label="Dog Days Tattoo — Startseite">
+            <Logo size={solid ? 52 : 58} framed priority />
           </a>
-        ))}
-        <a
-          href={PHONE_HREF}
-          onClick={() => setOpen(false)}
-          style={{ transitionDelay: open ? `${0.06 + ALL_LINKS.length * 0.06}s` : "0s" }}
-          className={`mt-2 inline-flex items-center gap-2 rounded-full border border-gold px-6 py-3 font-sans text-base font-semibold uppercase tracking-[.12em] text-gold transition-all duration-500 ${
-            open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+
+          <div className="flex items-center justify-end justify-self-end">
+            <ul className="hidden items-center gap-[clamp(.8rem,2vw,1.7rem)] lg:flex">
+              {RIGHT_LINKS.map((l) => (
+                <li key={l.href}>
+                  <NavLink {...l} />
+                </li>
+              ))}
+              <li>
+                <a
+                  href={PHONE_HREF}
+                  aria-label="Anrufen"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 text-gold transition-colors duration-300 hover:bg-gold hover:text-ink"
+                >
+                  <PhoneIcon />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        {/* Handy: Fullscreen-Overlay (Burger) */}
+        <div
+          className={`fixed inset-0 -z-10 flex flex-col items-center justify-center gap-5 bg-[#0d0d0b]/97 backdrop-blur-sm transition-opacity duration-500 lg:hidden ${
+            open ? "z-40 opacity-100" : "pointer-events-none opacity-0"
           }`}
         >
-          <PhoneIcon /> Anrufen
+          {ALL_LINKS.map((l, i) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              style={{ transitionDelay: open ? `${0.06 + i * 0.06}s` : "0s" }}
+              className={`font-western text-3xl transition-all duration-500 ${
+                "cta" in l && l.cta ? "text-gold" : "text-cream-dim hover:text-gold"
+              } ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
+            >
+              {l.label}
+            </a>
+          ))}
+          <a
+            href={PHONE_HREF}
+            onClick={() => setOpen(false)}
+            style={{ transitionDelay: open ? `${0.06 + ALL_LINKS.length * 0.06}s` : "0s" }}
+            className={`mt-2 inline-flex items-center gap-2 rounded-full border border-gold px-6 py-3 font-sans text-base font-semibold uppercase tracking-[.12em] text-gold transition-all duration-500 ${
+              open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+            }`}
+          >
+            <PhoneIcon /> Anrufen
+          </a>
+        </div>
+      </header>
+
+      {/* Nach dem Hero: nur noch Anruf + Termin (schwebend) */}
+      <div
+        className={`fixed right-3 top-3 z-50 flex items-center gap-2 transition-all duration-500 sm:right-5 sm:top-5 ${
+          heroOut ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
+        }`}
+      >
+        <a
+          href={PHONE_HREF}
+          aria-label="Anrufen"
+          className="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-[#0d0d0b]/85 px-4 py-2.5 font-sans text-xs font-semibold uppercase tracking-[.1em] text-gold shadow-[0_8px_24px_rgba(0,0,0,.4)] backdrop-blur-md transition-colors duration-300 hover:bg-gold hover:text-ink"
+        >
+          <PhoneIcon />
+          <span className="hidden sm:inline">Anrufen</span>
+        </a>
+        <a
+          href="#kontakt"
+          className="rounded-full border border-gold bg-gold px-4 py-2.5 font-sans text-xs font-semibold uppercase tracking-[.1em] text-ink shadow-[0_8px_24px_rgba(0,0,0,.4)] transition-colors duration-300 hover:bg-transparent hover:text-gold"
+        >
+          Termin
         </a>
       </div>
-    </header>
+    </>
   );
 }
 
