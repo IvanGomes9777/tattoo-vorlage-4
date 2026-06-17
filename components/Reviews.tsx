@@ -1,8 +1,7 @@
 // Google-Bewertungen — "Wall of Love" (Option 10): zwei vertikal gegenläufig
 // scrollende Spalten, Pause bei Hover. Server Component (CSS-Animationen, SSG).
 
-// TODO: echten Google-Eintrag/Place-Link eintragen
-const WRITE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=PLACEHOLDER";
+import { GOOGLE_REVIEW_URL as WRITE_REVIEW_URL } from "@/lib/site";
 
 type Review = { name: string; meta: string; time: string; text: string };
 

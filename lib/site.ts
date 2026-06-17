@@ -7,3 +7,9 @@ export const INSTAGRAM_HANDLE = "@dogdays_tattoo";
 export const INSTAGRAM_URL = "https://www.instagram.com/dogdays_tattoo/";
 
 export const ADDRESS = "Weseler Str. 47, 48151 Münster";
+
+// Google-Eintrag (Knowledge-Graph-ID aus dem geteilten Link).
+// Öffnet das Profil mit Sternen + "Rezension schreiben".
+export const GOOGLE_REVIEW_URL = "https://www.google.com/search?kgmid=/g/11y4kxt5gd";
+// Direkter Profil-/Maps-Link (vom Kunden geteilt).
+export const GOOGLE_MAPS_URL = "https://share.google/ah9mAP9IwsBh50QjB";

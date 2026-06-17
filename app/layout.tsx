@@ -44,7 +44,7 @@ const jsonLd = {
       name: "Dog Days Tattoo",
       url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/icon.svg` },
-      sameAs: ["https://www.instagram.com/dogdays_tattoo/"],
+      sameAs: ["https://www.instagram.com/dogdays_tattoo/", "https://www.google.com/search?kgmid=/g/11y4kxt5gd"],
     },
     {
       "@type": ["LocalBusiness", "TattooParlor"],
