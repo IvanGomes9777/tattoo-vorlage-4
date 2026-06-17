@@ -7,6 +7,7 @@ import { Faq } from "@/components/Faq";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { FloatingCall } from "@/components/FloatingCall";
+import { Reveal } from "@/components/Reveal";
 
 export default function Home() {
   return (
@@ -14,13 +15,25 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Gallery />
-        <Ablauf />
-        <Faq />
-        <Contact />
+        <Reveal>
+          <About />
+        </Reveal>
+        <Reveal>
+          <Gallery />
+        </Reveal>
+        <Reveal>
+          <Ablauf />
+        </Reveal>
+        <Reveal>
+          <Faq />
+        </Reveal>
+        <Reveal>
+          <Contact />
+        </Reveal>
       </main>
-      <Footer />
+      <Reveal>
+        <Footer />
+      </Reveal>
       <FloatingCall />
     </>
   );

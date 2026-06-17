@@ -32,6 +32,21 @@ body {
   }
 }
 
+/* Scroll-Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(44px) scale(0.985);
+  filter: blur(6px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
 /* Accessible focus ring in brand gold */
 :where(a, button, input, textarea, select):focus-visible {
   outline: 2px solid #e0a53c;
