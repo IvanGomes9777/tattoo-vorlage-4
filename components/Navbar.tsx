@@ -120,7 +120,7 @@ export function Navbar() {
           würde sonst das fixed-Positioning des Overlays einschränken). */}
       <div
         aria-hidden={!open}
-        className={`fixed inset-0 z-[60] flex flex-col items-center justify-center gap-5 bg-[#0d0d0b]/97 backdrop-blur-sm transition-opacity duration-500 lg:hidden ${
+        className={`fixed inset-0 z-[60] flex flex-col items-center justify-center gap-5 bg-[#0d0d0b] transition-opacity duration-500 lg:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
